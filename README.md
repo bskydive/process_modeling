@@ -7,7 +7,7 @@
  * [Оценка и прогнозирование проектов (Часть 0: Введение) максим дорофеев](https://www.youtube.com/watch?v=40NRDkgcksI&list=PLm6zCN_KJCrXXiDWoIczR7B9n73wPX2wn)
  * [Принцип экономии мыслетоплива / Максим Дорофеев (mnogosdelal.ru)](https://www.youtube.com/watch?v=fWR5SFhBUWc)
  * [Измерения в Scrum и Kanban: Шухарт, 6-сигма и люди снежинки с руками из жопы Дорофеев ](https://www.youtube.com/watch?v=VPDJXngp2bM)
- * [Несеребряные пули или кратко про методы софтостроения](https://habr.com/ru/post/546908/): нисходщий, восходящий, спиральный
+ * [Несеребряные пули или кратко про методы софтостроения](https://habr.com/ru/post/546908/): нисходящий, восходящий, спиральный
  * https://toolshed.com/2015/05/the-failure-of-agile.html
  * [группа экспертов про научный подход к процессам - code review долго плохо дорого](https://www.youtube.com/watch?v=IDj3x__YZgE&list=PLFtS8Ah0wZvWS37oveJ0-D5K6V7GWUpqY&index=13)
  * [текстовый квест "симулятор тимлида"](https://habr.com/ru/companies/wrike/articles/679146/)
