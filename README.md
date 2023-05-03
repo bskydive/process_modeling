@@ -20,7 +20,8 @@
 
  * нейросхемы смотреть через freemind, он кроссплатформенный на java
  * md смотреть любым текстовым редактором или через IDE
+ * [описание релизов/версий](https://t.me/stepanovv_ru_kb)
 
 ## Как связаться с автором?
 
- * https://t.me/stepanovv_ru_kb
+ * https://t.me/stepanovv_ru
