@@ -10,7 +10,6 @@
 
  * [моделирование и проектирование состояний системы, спецификаций(Alloy](https://habr.com/ru/company/yandex/blog/457810/)
  * [Максим Дорофеев — Эффективность неэффективности Встреча CodeFreeze в Москве, 10.07.2014](https://youtu.be/XDF02KmgJFE?list=PLm6zCN_KJCrX81iojL2lE2gHSbwnQE-QI&t=1560)
- * [Оценка и прогнозирование проектов (Часть 0: Введение) максим дорофеев](https://www.youtube.com/watch?v=40NRDkgcksI&list=PLm6zCN_KJCrXXiDWoIczR7B9n73wPX2wn)
  * [Принцип экономии мыслетоплива / Максим Дорофеев (mnogosdelal.ru)](https://www.youtube.com/watch?v=fWR5SFhBUWc)
  * [Измерения в Scrum и Kanban: Шухарт, 6-сигма и люди снежинки с руками из жопы Дорофеев ](https://www.youtube.com/watch?v=VPDJXngp2bM)
  * [Несеребряные пули или кратко про методы софтостроения](https://habr.com/ru/post/546908/): нисходящий, восходящий, спиральный
@@ -22,7 +21,5 @@
  * [Design Review и другие друзья разработчика, Дельгядо Филипп](https://www.youtube.com/watch?v=4Y0XJXRZv6k)
  * [Код ревью и парное программирование. Эффективность и гуманность ](https://music.yandex.com/album/13732143/track/112642653?dir=desc&activeTab=track-list)
  * https://www.litres.ru/daniel-kaneman/shum-nesovershenstvo-chelovecheskih-suzhdeniy/
- * [Оценка проектов, Часть 1: Простая диаграмма выгорания работ (Burn-Down Chart)](https://forum.mnogosdelal.ru/viewtopic.php?p=10675#p10675)
- * [Оценка проектов, Часть 2: Велосити и добавлясити](https://forum.mnogosdelal.ru/viewtopic.php?f=4&t=1122)
- * [Оценка проектов, Часть 3: Статистическое колдунство](https://forum.mnogosdelal.ru/viewtopic.php?f=4&t=1131)
+
 
