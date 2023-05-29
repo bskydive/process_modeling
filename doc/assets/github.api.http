@@ -1,0 +1,6 @@
+GET https://api.github.com/repos/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released
+Accept: application/vnd.github+json
+Authorization: Bearer {{$processEnv $gh-api-token}}
+
+# is:issue is:closed reason:completed label:insiders-released 
+# https://github.com/microsoft/vscode/issues?q=is%3Aissue+is%3Aclosed+reason%3Acompleted+label%3Ainsiders-released

@@ -11,6 +11,8 @@
  * [тут](./utils/freeplane/freeplane.sh) портативный рисователь нейросхем [freeplane](https://www.freeplane.org/), потомок почившего freemind, версия 1.11.1
  * рисователь мнемосхем пропатчен, увеличена память для экспорта картинок `JAVA_OPTS="-Xmx1000g $JAVA_OPTS"`
  * [тут](./doc/README.md) документация этапа проектирования
+ * [тут](./tokens/) bash скрипты с ENV VARIABLES и токенами для cloud api
+ * [тут](./doc/assets/) схемы и сырые данные для cloud api
 
 ## Для кого?
 
