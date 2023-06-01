@@ -1,6 +1,7 @@
 ## project
 
-tokens
+tokens/
+log/
 
 ## git
 .git
