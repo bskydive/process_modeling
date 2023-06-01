@@ -6,7 +6,7 @@ Authorization: Bearer {{gh-api-token}}
 
 ###
 
-GET https://api.github.com/repos/microsoft/vscode/issues?q=is:pr+is:merge&page=1
+GET https://api.github.com/repos/microsoft/vscode/pulls?q=is:pr+is:merged&page=1
 Accept: application/vnd.github+json
 Authorization: Bearer {{gh-api-token}}
 
@@ -20,7 +20,7 @@ Authorization: Bearer {{gh-api-token}}
 ###
 
 curl --request GET \
---url 'https://api.github.com/repos/microsoft/vscode/issues?q=is%3Aissue%20is%3Aclosed%20reason%3Acompleted%20label%3Ainsiders-released&page=3' \
+--url 'https://api.github.com/repos/microsoft/vscode/issues?q=is%3Aissue%20is%3Aclosed%20reason%3Acompleted%20label%3Ainsiders-released&page=1' \
 --header 'accept: application/vnd.github+json' \
 --header 'authorization: Bearer '${{gh-api-token}} \
 --header 'user-agent: vscode-restclient'

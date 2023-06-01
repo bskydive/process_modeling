@@ -10,7 +10,7 @@ token_file="tokens/.gh-api-token.sh"
 echo token ${gh_api_token}
 
 rundate=`date +%H.%M.%S_%d.%m.%Y`
-output_path="doc/assets/responses"
+output_path="log"
 
 # issues
 
@@ -29,13 +29,13 @@ done
 
 # PR's
 
-page_max=236
+page_max=14
 
 for (( page=1 ; page<=${page_max} ; page++ )); do
 
     echo -e "\n REQUEST PR PAGE ${page} OF ${page_max}"
     curl -o ${output_path}/curl-vscode-PR-${rundate}-${page}-result.json --request GET \
-    --url 'https://api.github.com/repos/microsoft/vscode/issues?q=is:pr+is:merged&page='${page} \
+    --url 'https://api.github.com/repos/microsoft/vscode/pulls?q=is:pr+is:merged&page='${page} \
     --header 'accept: application/vnd.github+json' \
     --header 'authorization: Bearer '${gh_api_token} \
     --header 'user-agent: vscode-restclient'
