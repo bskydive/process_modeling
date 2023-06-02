@@ -1,4 +1,4 @@
-interface IGithub {
+interface IGithubIssues {
     url: string;
     repository_url: string;
     labels_url: string;

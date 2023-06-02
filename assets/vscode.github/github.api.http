@@ -1,26 +1,27 @@
 ###
 
-GET https://api.github.com/repos/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released&page=1
+GET https://api.github.com/repos/microsoft/vscode/issues?state=closed&labels=insiders-released&pulls=true&page=1
 Accept: application/vnd.github+json
 Authorization: Bearer {{gh-api-token}}
+X-GitHub-Api-Version: 2022-11-28
 
 ###
 
-GET https://api.github.com/repos/microsoft/vscode/pulls?q=is:pr+is:merged&page=1
+GET https://api.github.com/repos/microsoft/vscode/pulls?state=closed&page=1
 Accept: application/vnd.github+json
 Authorization: Bearer {{gh-api-token}}
 
 
 #&page=236
-# is:issue is:closed reason:completed label:insiders-released
-# https://github.com/microsoft/vscode/issues?q=is%3Aissue+is%3Aclosed+reason%3Acompleted+label%3Ainsiders-released
+# https://github.com/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released
+# https://github.com/microsoft/vscode/pulls?q=is:pr+is:merged&page=1
 
 # is:pr is:merged
 
 ###
 
 curl --request GET \
---url 'https://api.github.com/repos/microsoft/vscode/issues?q=is%3Aissue%20is%3Aclosed%20reason%3Acompleted%20label%3Ainsiders-released&page=1' \
+--url 'https://api.github.com/repos/microsoft/vscode/issues?state=closed&labels=insiders-released&pulls=true&page=1' \
 --header 'accept: application/vnd.github+json' \
 --header 'authorization: Bearer '${{gh-api-token}} \
 --header 'user-agent: vscode-restclient'
