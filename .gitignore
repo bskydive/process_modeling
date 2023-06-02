@@ -2,6 +2,7 @@
 
 tokens/
 log/
+dist/
 
 ## git
 .git

@@ -1,0 +1,23 @@
+{
+  "name": "process_modeling",
+  "version": "0.0.1",
+  "description": "open source projects issues/code parsing and analysis",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "npx rimraf dist && tsc --build tsconfig.json && node dist/out-tsc/index.js",
+    "lint:es": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js ./src/**/*",
+    "lint:es:log": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js -o eslint.log -f visualstudio ./src/**/*",
+    "clean": "npx rimraf dist"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}
