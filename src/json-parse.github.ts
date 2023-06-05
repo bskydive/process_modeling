@@ -140,4 +140,49 @@ function parsePulls(): IGithubPullParsed[]{
 export function main() {
 	const parsedIssues: IGithubIssueParsed[] = parseIssues();
 	const parsedPulls: IGithubPullParsed[] = parsePulls();
+
+	/* вывод
+		issues parsed curl-vscode-ISSUES-10.56.46_02.06.2023-1-result.json 237 {
+		url: 'https://github.com/microsoft/vscode/issues/184041',
+		id: 1735940057,
+		number: 184041,
+		title: 'Setting `snippetsPreventQuickSuggestions` is not considered',
+		user_id: 2931520,
+		state: 'closed',
+		assignee_id: 1794099,
+		comments_length: 0,
+		created: '2023-06-01T10:01:54Z',
+		updated: '2023-06-01T21:04:32Z',
+		closed: '2023-06-01T10:21:27Z',
+		body: "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't trigger quick suggestions\r\n" +
+			'\r\n' +
+			'Does not work for me:\r\n' +
+			'\r\n' +
+			'![Code_-_Insiders_XGunqwfNfA](https://github.com/microsoft/vscode/assets/2931520/b5465fdb-f125-40e2-8e20-983b58867a62)\r\n' +
+			'\r\n' +
+			'_Originally posted by @hediet in https://github.com/microsoft/vscode/issues/173387#issuecomment-1571696644_\r\n' +
+			'            '
+		} 7110
+		pulls parsed curl-vscode-PULLS-11.04.51_02.06.2023-1-result.json 707 {
+		url: 'https://github.com/microsoft/vscode/pull/184126',
+		id: 1375205953,
+		number: 184126,
+		title: 'Extension host veto is registered multiple times on restart (#183778)',
+		user_id: 900690,
+		state: 'closed',
+		assignee_id: 900690,
+		created: '2023-06-02T06:47:31Z',
+		updated: '2023-06-02T07:44:20Z',
+		closed: '2023-06-02T07:44:19Z',
+		merged: '2023-06-02T07:44:19Z',
+		body: '<!-- Thank you for submitting a Pull Request. Please:\n' +
+			'* Read our Pull Request guidelines:\n' +
+			'  https://github.com/microsoft/vscode/wiki/How-to-Contribute#pull-requests\n' +
+			'* Associate an issue with the Pull Request.\n' +
+			'* Ensure that the code is up-to-date with the `main` branch.\n' +
+			'* Include a description of the proposed changes and how to test them.\n' +
+			'-->\n',
+		merge_commit_sha: '9170aa877cecbb84c5fd7e2d0d988fdca70c21b1'
+		} 21183
+	*/
 }
