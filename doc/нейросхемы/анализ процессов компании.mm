@@ -1,0 +1,174 @@
+<map version="freeplane 1.11.1">
+<!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
+<node TEXT="анализ процессов компании" FOLDED="false" ID="ID_1593108024" CREATED="1683571275868" MODIFIED="1683571487932" STYLE="oval">
+<font SIZE="18"/>
+<hook NAME="MapStyle" background="#3c3f41" zoom="1.3">
+    <properties edgeColorConfiguration="#808080ff,#00ddddff,#dddd00ff,#dd0000ff,#00dd00ff,#dd0000ff,#7cddddff,#dddd7cff,#dd7cddff,#7cdd7cff,#dd7c7cff,#7c7cddff" associatedTemplateLocation="template:/Darcula-1.7.mm" fit_to_viewport="false"/>
+
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" ID="ID_1905195851" ICON_SIZE="12 pt" COLOR="#cccccc" STYLE="fork">
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_1905195851" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.note" COLOR="#cccccc" BACKGROUND_COLOR="#3c3f41" TEXT_ALIGN="LEFT"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge STYLE="hide_edge"/>
+<cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
+<richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
+<richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.selection" BACKGROUND_COLOR="#660000" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#660000"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="bottom_or_right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subtopic" COLOR="#cc3300" STYLE="fork">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
+<font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon BUILTIN="yes"/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="bottom_or_right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#dddddd" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="10 pt">
+<font SIZE="18"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,1" COLOR="#ff3300">
+<font SIZE="16"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,2" COLOR="#ffb439">
+<font SIZE="14"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,3" COLOR="#99ffff">
+<font SIZE="12"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,4" COLOR="#bbbbbb">
+<font SIZE="10"/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,5"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,6"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,7"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,8"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,9"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,10"/>
+<stylenode LOCALIZED_TEXT="AutomaticLayout.level,11"/>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<hook NAME="AutomaticEdgeColor" COUNTER="4" RULE="ON_BRANCH_CREATION"/>
+<node TEXT="внешняя информация" POSITION="bottom_or_right" ID="ID_792682883" CREATED="1683571489994" MODIFIED="1683571503060">
+<edge COLOR="#00dddd"/>
+<node TEXT="продукт/сфера" ID="ID_108349515" CREATED="1683571513249" MODIFIED="1683571903852">
+<node TEXT="крипта/трейдинг/скам" ID="ID_32049047" CREATED="1683571631655" MODIFIED="1683571641489"/>
+<node TEXT="финтех" ID="ID_1691814701" CREATED="1683571642175" MODIFIED="1683571645792"/>
+<node TEXT="микрозаймы/мфо" ID="ID_368446950" CREATED="1683571650239" MODIFIED="1683571658568"/>
+<node TEXT="геймдев/гемблинг" ID="ID_1319572528" CREATED="1683571661126" MODIFIED="1683571860485"/>
+<node TEXT="дейтинг" ID="ID_350853298" CREATED="1683571839179" MODIFIED="1683571842101"/>
+</node>
+<node TEXT="отзывы" ID="ID_833925608" CREATED="1683571527817" MODIFIED="1683571530819">
+<node TEXT="glassdoor" ID="ID_1248689008" CREATED="1683571699526" MODIFIED="1683571703048"/>
+<node TEXT="hh" ID="ID_395872879" CREATED="1683571703750" MODIFIED="1683571705886"/>
+<node TEXT="ch" ID="ID_1300430085" CREATED="1683571706310" MODIFIED="1683571712311"/>
+<node TEXT="про конкретное подразделение" ID="ID_112728483" CREATED="1683571738685" MODIFIED="1683571748935"/>
+<node TEXT="статьи а прессе" ID="ID_668125883" CREATED="1683571764693" MODIFIED="1683571772638"/>
+</node>
+<node TEXT="сотрудники" ID="ID_260326683" CREATED="1683571531433" MODIFIED="1683571547587">
+<node TEXT="соцсети" ID="ID_701569592" CREATED="1683571810364" MODIFIED="1683571813389"/>
+<node TEXT="выступления" ID="ID_202057435" CREATED="1683571813740" MODIFIED="1683571816342"/>
+<node TEXT="блоги/статьи" ID="ID_1485740211" CREATED="1683571816740" MODIFIED="1683571828118"/>
+</node>
+<node TEXT="возраст компании/продукта" ID="ID_1000140026" CREATED="1683571550832" MODIFIED="1683571922428"/>
+<node TEXT="финансовые перспективы" ID="ID_466792584" CREATED="1683571569104" MODIFIED="1683571575561">
+<node TEXT="источник финансирования" ID="ID_1613528357" CREATED="1683571941058" MODIFIED="1683571946076"/>
+<node TEXT="план выручки" ID="ID_1202034675" CREATED="1683571946626" MODIFIED="1683571953795"/>
+<node TEXT="на чём экономят" ID="ID_868114729" CREATED="1683572223197" MODIFIED="1683572231056">
+<node TEXT="тестовые серверы" ID="ID_836965299" CREATED="1683572232157" MODIFIED="1683572236062"/>
+<node TEXT="тестовые железки" ID="ID_57955627" CREATED="1683572236525" MODIFIED="1683572255902"/>
+<node TEXT="ограничения зарплатного проекта" ID="ID_559343459" CREATED="1683572243669" MODIFIED="1683572275758"/>
+<node TEXT="премия вместо оклада" ID="ID_823836739" CREATED="1683573187485" MODIFIED="1683573199726"/>
+</node>
+<node TEXT="график стоимости акций" ID="ID_315540868" CREATED="1683573160517" MODIFIED="1683573173638"/>
+</node>
+<node TEXT="планы найма/сокращений" ID="ID_1082944610" CREATED="1683571579064" MODIFIED="1683571605169"/>
+<node TEXT="сайт" ID="ID_674236652" CREATED="1683571687254" MODIFIED="1683571690264">
+<node TEXT="культура" ID="ID_448127801" CREATED="1683571691789" MODIFIED="1683571695840"/>
+<node TEXT="история" ID="ID_1676529713" CREATED="1683571755037" MODIFIED="1683571757015"/>
+</node>
+<node TEXT="вакансии" ID="ID_1729274021" CREATED="1683571982409" MODIFIED="1683571985531">
+<node TEXT="технологии" ID="ID_1339324288" CREATED="1683571986377" MODIFIED="1683572008612"/>
+<node TEXT="как давно открыты" ID="ID_1599727080" CREATED="1683572363355" MODIFIED="1683572368316"/>
+<node TEXT="вилка зп" ID="ID_759602179" CREATED="1683572402994" MODIFIED="1683572408531"/>
+</node>
+<node TEXT="карго культ" ID="ID_875676040" CREATED="1683572010713" MODIFIED="1683572026353">
+<node TEXT="пустые лозунги" ID="ID_391736811" CREATED="1683572026357" MODIFIED="1683572074393"/>
+<node TEXT="опционы" ID="ID_577340431" CREATED="1683572031360" MODIFIED="1683572152280"/>
+<node TEXT="не могут объяснить зачем" ID="ID_1867152404" CREATED="1683572152814" MODIFIED="1683572301182"/>
+<node TEXT="уходят от вопроса о проблемах" ID="ID_1350415184" CREATED="1683572041448" MODIFIED="1683572323293"/>
+</node>
+</node>
+<node TEXT="внутренняя информация" POSITION="bottom_or_right" ID="ID_1269363956" CREATED="1683572374595" MODIFIED="1683572382253">
+<edge COLOR="#00dd00"/>
+<node TEXT="технологии проекта" ID="ID_55242897" CREATED="1683572385498" MODIFIED="1683572390740">
+<node TEXT="раньше" ID="ID_153365960" CREATED="1683572470513" MODIFIED="1683572473722"/>
+<node TEXT="сейчас" ID="ID_1171171816" CREATED="1683572474370" MODIFIED="1683572476610"/>
+<node TEXT="в будущем" ID="ID_1348685971" CREATED="1683572477008" MODIFIED="1683572480155"/>
+<node TEXT="возраст технологий" ID="ID_1858599867" CREATED="1683572557583" MODIFIED="1683572563081"/>
+</node>
+<node TEXT="проблемы" ID="ID_1065196447" CREATED="1683572391642" MODIFIED="1683572488081">
+<node TEXT="инфраструктура" ID="ID_922593828" CREATED="1683572488552" MODIFIED="1683572492338"/>
+<node TEXT="процессы" ID="ID_1059413891" CREATED="1683572492664" MODIFIED="1683572494970"/>
+<node TEXT="сотрудники" ID="ID_500310887" CREATED="1683572495272" MODIFIED="1683572507361">
+<node TEXT="почему увольняются" ID="ID_1289302477" CREATED="1683572720052" MODIFIED="1683572728167"/>
+<node TEXT="когда и кто ушёл" ID="ID_593267074" CREATED="1683572728541" MODIFIED="1683572733734"/>
+</node>
+<node TEXT="менеджеры" ID="ID_323997723" CREATED="1683572498320" MODIFIED="1683572512418"/>
+<node TEXT="код" ID="ID_1425971641" CREATED="1683572514024" MODIFIED="1683572515794">
+<node TEXT="техдолг" ID="ID_949638932" CREATED="1683572527040" MODIFIED="1683572529698"/>
+</node>
+<node TEXT="документация" ID="ID_1791219800" CREATED="1683572518360" MODIFIED="1683572521250"/>
+<node TEXT="правила сверхурочной работы" ID="ID_1886782316" CREATED="1683573023624" MODIFIED="1683573035058"/>
+</node>
+<node TEXT="команда" ID="ID_1005483063" CREATED="1683572577783" MODIFIED="1683572583335">
+<node TEXT="с кем взаимодействовать" ID="ID_1933941322" CREATED="1683572584799" MODIFIED="1683572591825"/>
+<node TEXT="возраст" ID="ID_552745411" CREATED="1683572592615" MODIFIED="1683572597729"/>
+<node TEXT="как давно в проекте/компании" ID="ID_1844791046" CREATED="1683572959200" MODIFIED="1683572966098"/>
+<node TEXT="удалёнка" ID="ID_839780840" CREATED="1683572598047" MODIFIED="1683572600592"/>
+<node TEXT="размер" ID="ID_1089974194" CREATED="1683572948969" MODIFIED="1683572952363"/>
+<node TEXT="опыт" ID="ID_891708329" CREATED="1683572953256" MODIFIED="1683572955523"/>
+<node TEXT="церемонии" ID="ID_677275343" CREATED="1683572601023" MODIFIED="1683572608105"/>
+<node TEXT="отдых" ID="ID_792444912" CREATED="1683572608486" MODIFIED="1683572614480"/>
+<node TEXT="распределение ответственности" ID="ID_1575942392" CREATED="1683572646486" MODIFIED="1683572654782">
+<node TEXT="сколько совещаний" ID="ID_465701600" CREATED="1683572655406" MODIFIED="1683572660231"/>
+<node TEXT="сколько кодинга" ID="ID_1777851187" CREATED="1683572660517" MODIFIED="1683572664491"/>
+<node TEXT="сколько документирвоания" ID="ID_1909960642" CREATED="1683572664942" MODIFIED="1683572669743"/>
+<node TEXT="сколько инфраструктуры" ID="ID_816887453" CREATED="1683572670085" MODIFIED="1683572675207"/>
+<node TEXT="сколько найма" ID="ID_478823945" CREATED="1683572675357" MODIFIED="1683572678934"/>
+<node TEXT="сколько аналитики" ID="ID_1339192611" CREATED="1683572679357" MODIFIED="1683572690000"/>
+<node TEXT="сколько общаться с заказчиком/ПО" ID="ID_1802463944" CREATED="1683572690677" MODIFIED="1683572703702"/>
+</node>
+</node>
+<node TEXT="процессы" ID="ID_381244587" CREATED="1683572883594" MODIFIED="1683572886564">
+<node TEXT="достаточное время адаптации" ID="ID_1693614249" CREATED="1683572892298" MODIFIED="1683572902916"/>
+<node TEXT="ожидания по результатам труда" ID="ID_938195745" CREATED="1683572903338" MODIFIED="1683572919012"/>
+<node TEXT="цели/задачи на период" ID="ID_1705320514" CREATED="1683572919433" MODIFIED="1683572929042"/>
+<node TEXT="что категорически нельзя делать" ID="ID_1933153105" CREATED="1683573048911" MODIFIED="1683573056337"/>
+<node TEXT="кто и как оценивает результаты работы" ID="ID_1430502320" CREATED="1683573058023" MODIFIED="1683573067617"/>
+<node TEXT="кто владеет бюджетом" ID="ID_1336747285" CREATED="1683573068007" MODIFIED="1683573072279"/>
+<node TEXT="кто увольняет" ID="ID_164457684" CREATED="1683573072583" MODIFIED="1683573088481"/>
+<node TEXT="кто нанимает" ID="ID_273689210" CREATED="1683573078127" MODIFIED="1683573082200"/>
+</node>
+</node>
+</node>
+</map>
