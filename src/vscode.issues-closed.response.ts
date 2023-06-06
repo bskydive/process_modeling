@@ -1,17 +1,22 @@
+/** Avoid optional keys to prevent header/columns sorting errors */
 export interface IGithubIssueParsed {
 	url: string; // "html_url": "https://github.com/microsoft/vscode/issues/184041",
 	id: number; // "id": 1735940057,
 	number: number; // "number": 184041,
 	title: string; // "title": "Setting `snippetsPreventQuickSuggestions` is not considered",
-	user_id: number | null; // "id": 2931520,
+	user: string | null; // "login": "hediet",
 	state: string; // "state": "closed",
-	assignee_id: number | null; // "id": 1794099,
+	assignee: string | null; // "login": "jrieken",
 	comments_length: number; // "comments": 0,
 	created: string; // "created_at": "2023-06-01T10:01:54Z",
 	updated: string; // "updated_at": "2023-06-01T21:04:32Z",
 	closed: string; // "closed_at": "2023-06-01T10:21:27Z",
 	body: string; // "body": "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't
+	durationMs: number; // Date(closed) - Date(created)
+	durationDate: string; // Date(closed) - Date(created)
 }
+
+export type TGithubIssueParsedHeader = keyof IGithubIssueParsed
 
 export interface IGithubIssue {
 	url: string;

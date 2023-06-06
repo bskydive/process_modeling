@@ -1,20 +1,25 @@
+/** Avoid optional keys to prevent header/columns sorting errors */
 export interface IGithubPullParsed {
 	url: string; // "html_url": "https://github.com/microsoft/vscode/issues/184041",
 	id: number; // "id": 1735940057,
 	number: number; // "number": 184041,
 	title: string; // "title": "Setting `snippetsPreventQuickSuggestions` is not considered",
-	user_id: number | null; // "id": 2931520,
+	user: string | null; // "login": "deepak1556",
 	state: string; // "state": "closed",
-	assignee_id: number | null; // "id": 1794099,
+	assignee: string | null; // "login": "deepak1556",
 	created: string; // "created_at": "2023-06-01T10:01:54Z",
 	updated: string; // "updated_at": "2023-06-01T21:04:32Z",
 	closed: string; // "closed_at": "2023-06-01T10:21:27Z",
 	merged: string | null; // "merged_at": "2023-06-01T10:21:27Z",
 	body: string; // "body": "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't
 	merge_commit_sha: string; // "merge_commit_sha": "9170aa877cecbb84c5fd7e2d0d988fdca70c21b1",
+	durationMs: number; // Date(closed) - Date(created)
+	durationDate: string; // Date(closed) - Date(created)
 }
 
-	export interface IGithubPull {
+export type TGithubPullParsedHeader = keyof IGithubPullParsed
+
+export interface IGithubPull {
 	url: string;
 	id: number;
 	node_id: string;
