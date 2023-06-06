@@ -107,6 +107,7 @@ function saveParsedIssues(
 ) {
 	let headers: (keyof IGithubIssueParsed)[];
 
+	// TODO make durationDays, durationHours, durationMinutes, durationSeconds
 	headers = [
 		// "url",
 		// "id",
