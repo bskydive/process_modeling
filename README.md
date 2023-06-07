@@ -6,34 +6,49 @@
  * Проект инструмента моделирования
  * Разбор книг, текстов, докладов про моделирование
  * реальные данные для анализа задач/кода
- * TODO скрипты черновые, не всё работает
+ * скрипты парсера данных
 
 ## Что тут есть?
 
  * [тут](./utils/freeplane/freeplane.sh) портативный рисователь нейросхем [freeplane](https://www.freeplane.org/), потомок почившего freemind, версия 1.11.1
  * рисователь мнемосхем пропатчен, увеличена память для экспорта картинок `JAVA_OPTS="-Xmx1000g $JAVA_OPTS"`
- * [тут](./doc/README.md) документация этапа проектирования
+ * [тут](./doc/README.md) подробная документация и аналитика
  * [тут](./tokens/) bash скрипты с ENV VARIABLES и токенами для cloud api
- * [тут](./doc/assets/) схемы и сырые данные для cloud api
+ * [тут](./doc/assets/) схемы, сырые данные и результаты анализа(архивы, таблицы excel)
+ * [тут](./src/json-parse.github.ts) исходники парсера
 
 ## Для кого?
 
- * тимлидов, разработчиков
+ * тимлидов, разработчиков, аналитиков, любителей разобраться в качестве процессов/проектов
 
 ## Как пользоваться?
 
- * нейросхемы смотреть через freemind, он кроссплатформенный на java
+ * нейросхемы смотреть через freeplane, он кроссплатформенный на java
  * md смотреть любым текстовым редактором или через IDE
  * [CHANGELOG](https://t.me/stepanovv_ru_kb)
+ * настройка проекта
+	```bash
+		git clone https://github.com/bskydive/process_modeling.git
+		cd process_modeling
+	```
+ * подготовка данных
+	```bash
+		mkdir -p ./log/pulls.responses
+		tar -xf ./assets/vscode.github/pulls.responses.tar.gz ./log/pulls.responses
+		mkdir -p ./log/issues.responses
+		tar -xf ./assets/vscode.github/issues.responses.tar.gz ./log/issues.responses
+	```
+ * ставим [node version manager](https://github.com/nvm-sh/nvm) либо nodejs вручную
  * запуск парсера 
 	```bash
-		# ставим nvm
 		nvm i 20
 		npm i
 		npm run start
 	```
+ * смотрим выходные данные в `./log/`
+ * вставляем данные в excel файл в `./assets/`, смотрим на графики
 
-### TODO Анализ issues vscode
+### Загрузка данных vscode github repo
 
  * надежда на любовь M$ к github питает вероятность качественных данных
  * смотрим бесплатно без смс

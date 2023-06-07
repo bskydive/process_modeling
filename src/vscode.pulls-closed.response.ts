@@ -7,17 +7,26 @@ export interface IGithubPullParsed {
 	user: string | null; // "login": "deepak1556",
 	state: string; // "state": "closed",
 	assignee: string | null; // "login": "deepak1556",
+
+	// Date format: ISO UTC
 	created: string; // "created_at": "2023-06-01T10:01:54Z",
 	updated: string; // "updated_at": "2023-06-01T21:04:32Z",
 	closed: string; // "closed_at": "2023-06-01T10:21:27Z",
 	merged: string | null; // "merged_at": "2023-06-01T10:21:27Z",
 	body: string; // "body": "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't
 	merge_commit_sha: string; // "merge_commit_sha": "9170aa877cecbb84c5fd7e2d0d988fdca70c21b1",
-	durationMs: number; // Date(closed) - Date(created)
-	durationDate: string; // Date(closed) - Date(created)
+
+	// duration = Date(closed) - Date(created)
+	durationMs: number;
+	durationDate: string; // date formatting from milliseconds to DD-HH-MM-SS
+	durationDays: number;
+	durationHours: number;
+	durationMinutes: number;
+	durationSeconds: number;
+	durationHoursRawFloat: number; // main value
 }
 
-export type TGithubPullParsedHeader = keyof IGithubPullParsed
+export type TGithubPullParsedHeader = keyof IGithubPullParsed;
 
 export interface IGithubPull {
 	url: string;
