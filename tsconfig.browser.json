@@ -1,10 +1,9 @@
 {
 	"compileOnSave": false,
 	"files": [
-		"parser.ts",
+		"./src/plotly.ts",
 	],
 	"include": [
-		"./src/*.ts"
 	],
 	"compilerOptions": {
 		"baseUrl": "./",

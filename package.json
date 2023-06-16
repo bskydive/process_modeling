@@ -10,23 +10,32 @@
 		"node": "^20.0.0"
 	},
 	"scripts": {
-		"build": "npx rimraf dist && npm run clean && tsc --build tsconfig.json",
-		"node": "node dist/out-tsc/index.js",
-		"start": "npm run build && npm run node",
-		"debug": "node dist/out-tsc/index.js",
+		"start": "npm run build-browser && npm run serve",
+		"serve": "http-server ./",
+		"build-browser": "npm run clean && tsc --build tsconfig.browser.json",
+		"parse": "npm run build && node dist/out-tsc/parser.js",
+		"build": "npm run clean && tsc --build tsconfig.json",
+		"debug": "node dist/out-tsc/parser.js",
 		"lint:es": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js ./src/**/*",
 		"lint:es:log": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js -o eslint.log -f visualstudio ./src/**/*",
 		"clean": "npx rimraf dist",
-		"profile": "node --prof dist/out-tsc/index.js ",
-		"inspect": "node --inspect dist/out-tsc/index.js "
+		"profile": "node --prof dist/out-tsc/parser.js ",
+		"inspect": "node --inspect dist/out-tsc/parser.js "
 	},
 	"type": "commonjs",
 	"author": "stepanovv.ru",
 	"license": "MIT",
 	"devDependencies": {
 		"@types/node": "^20.2.5",
+		"@types/plotly.js": "^2.12.18",
+		"http-server": "^14.1.1",
 		"rimraf": "^5.0.1",
-		"ts-node": "^10.9.1",
+		"rollup": "^3.25.1",
 		"typescript": "^5.1.3"
+	},
+	"dependencies": {
+		"plotly.js": "^2.24.2",
+		"plotly.js-dist": "^2.24.2",
+		"plotly.js-dist-min": "^2.24.2"
 	}
 }

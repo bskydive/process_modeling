@@ -43,7 +43,7 @@
 	```bash
 		nvm i 20
 		npm i
-		npm run start
+		npm run parse
 	```
  * смотрим выходные данные в `./log/`
  * вставляем данные в excel файл в `./assets/`, смотрим на графики
@@ -71,6 +71,11 @@
             #!/bin/bash
             export gh_api_token="SOMETOKEN"
         ```
+
+## TODO
+
+ * сделать UI в браузере локально
+ * проверить работу отладчика nodejs
 
 ## Как связаться с автором?
 
