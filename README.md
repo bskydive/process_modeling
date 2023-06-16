@@ -33,10 +33,8 @@
 	```
  * подготовка данных
 	```bash
-		mkdir -p ./log/pulls.responses
-		tar -xf ./assets/vscode.github/pulls.responses.tar.gz ./log/pulls.responses
-		mkdir -p ./log/issues.responses
-		tar -xf ./assets/vscode.github/issues.responses.tar.gz ./log/issues.responses
+		tar -xf ./assets/vscode.github/pulls.responses.tar.gz -C ./log/
+		tar -xf ./assets/vscode.github/issues.responses.tar.gz -C ./log/
 	```
  * ставим [node version manager](https://github.com/nvm-sh/nvm) либо nodejs вручную
  * запуск парсера 

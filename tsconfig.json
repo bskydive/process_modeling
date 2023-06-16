@@ -4,11 +4,10 @@
 		"parser.ts",
 	],
 	"include": [
-		"./src/*.ts"
 	],
 	"compilerOptions": {
 		"baseUrl": "./",
-		"outDir": "./dist/out-tsc",
+		"outDir": "./dist/node",
 		"declaration": false,
 		"module": "CommonJS",
 		"downlevelIteration": true,

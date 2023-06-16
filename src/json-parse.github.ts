@@ -159,10 +159,11 @@ function parsePullsFile(rawFile: string): IGithubPullParsed[] {
 function parseIssues(path: string): IGithubIssueParsed[] {
 	const issuesFileNameList: string[] = fsUtils.listFiles(path);
 	let parsedIssues: IGithubIssueParsed[] = [];
+	// console.log('files',path, issuesFileNameList);
 
 	issuesFileNameList.forEach((fileName: string) => {
-		const rawFile = fsUtils.readData(path, fileName);
 		// console.log("parse issue", path, fileName);
+		const rawFile = fsUtils.readData(path, fileName);
 		parsedIssues.push(...parseIssuesFile(rawFile));
 	});
 
@@ -200,8 +201,8 @@ export function main() {
 
 	// configuration
 	const path = "./log/";
-	const pathIssues: string = "./log/issues.responses/";
-	const pathPulls: string = "./log/pulls.responses/";
+	const pathIssues: string = path + "issues.responses/";
+	const pathPulls: string = path + "pulls.responses/";
 	const SEP = `\t`;
 	const headersIssues: TGithubIssueParsedHeader[] = [
 		"closed",

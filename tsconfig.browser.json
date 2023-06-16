@@ -1,13 +1,13 @@
 {
 	"compileOnSave": false,
 	"files": [
-		"./src/plotly.ts",
+		"./src/graph/plotly.ts",
 	],
 	"include": [
 	],
 	"compilerOptions": {
 		"baseUrl": "./",
-		"outDir": "./dist/out-tsc",
+		"outDir": "./dist/browser",
 		"declaration": false,
 		"module": "CommonJS",
 		"downlevelIteration": true,

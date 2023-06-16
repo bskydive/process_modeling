@@ -5,7 +5,7 @@ export function listFiles(path: string): string[] {
 
 	try {
 		result = fs.readdirSync(path, "utf-8") || [];
-		// console.log("list", path, result.length);
+		// console.log("list", path, result);
 	} catch (error) {
 		console.log("FS read error:", error);
 	}

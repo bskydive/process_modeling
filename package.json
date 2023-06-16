@@ -12,15 +12,18 @@
 	"scripts": {
 		"start": "npm run build-browser && npm run serve",
 		"serve": "http-server ./",
-		"build-browser": "npm run clean && tsc --build tsconfig.browser.json",
-		"parse": "npm run build && node dist/out-tsc/parser.js",
-		"build": "npm run clean && tsc --build tsconfig.json",
-		"debug": "node dist/out-tsc/parser.js",
+		"build-browser": "npm run clean-browser && tsc --build tsconfig.browser.json",
+		"clean-browser": "npx rimraf dist/browser",
+
+		"parse": "npm run build-node && node dist/node/parser.js",
+		"build-node": "npm run clean-node && tsc --build tsconfig.json",
+		"clean-node": "npx rimraf dist/node",
+		"debug": "node dist/node/parser.js",
+
 		"lint:es": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js ./src/**/*",
 		"lint:es:log": "node --optimize_for_size --max_old_space_size=8000 --gc_interval=100 node_modules/eslint/bin/eslint.js -c .eslintrc.js -o eslint.log -f visualstudio ./src/**/*",
-		"clean": "npx rimraf dist",
-		"profile": "node --prof dist/out-tsc/parser.js ",
-		"inspect": "node --inspect dist/out-tsc/parser.js "
+		"profile": "node --prof dist/node/parser.js ",
+		"inspect": "node --inspect dist/node/parser.js "
 	},
 	"type": "commonjs",
 	"author": "stepanovv.ru",
