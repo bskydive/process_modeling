@@ -1,4 +1,4 @@
-import * as fs from "node:fs";
+import * as fs from "fs";
 
 export function listFiles(path: string): string[] {
 	let result: string[] = [];

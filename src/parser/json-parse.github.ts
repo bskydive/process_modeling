@@ -1,18 +1,25 @@
-import * as issues from "./vscode.issues-closed.response.json";
+import * as issues from "./model/vscode.issues-closed.response.json";
 import {
 	IGithubIssue,
 	TGithubIssueParsedHeader,
 	IGithubIssueParsed,
-} from "./vscode.issues-closed.response";
+} from "./model/vscode.issues-closed.response";
 import {
 	IGithubPull,
 	IGithubPullParsed,
 	TGithubPullParsedHeader,
-} from "./vscode.pulls-closed.response";
+} from "./model/vscode.pulls-closed.response";
 import * as fsUtils from "./fs-utils";
 import * as mathUtils from "./math-utils";
 
+export interface IParsedData {
+	parsedIssues: IGithubIssueParsed[];
+	parsedPulls: IGithubPullParsed[];
+}
+
+/** @deprecated TODO remove or use */
 type TDataParsed = IGithubIssueParsed | IGithubPullParsed;
+/** @deprecated TODO remove or use */
 type TDataParsedHeader = TGithubIssueParsedHeader | TGithubPullParsedHeader;
 
 /**
@@ -87,7 +94,8 @@ function parseIssuesFile(rawFile: string): IGithubIssueParsed[] {
 			new Date(issue.closed_at).valueOf() -
 			new Date(issue.created_at).valueOf();
 
-			const dateDiffParsed: mathUtils.IDateDiffParsed = mathUtils.msToDate(durationMs);
+		const dateDiffParsed: mathUtils.IDateDiffParsed =
+			mathUtils.msToDate(durationMs);
 
 		result.push({
 			url: issue.html_url,
@@ -126,7 +134,8 @@ function parsePullsFile(rawFile: string): IGithubPullParsed[] {
 			new Date(pull.closed_at).valueOf() -
 			new Date(pull.created_at).valueOf();
 
-		const dateDiffParsed: mathUtils.IDateDiffParsed = mathUtils.msToDate(durationMs);
+		const dateDiffParsed: mathUtils.IDateDiffParsed =
+			mathUtils.msToDate(durationMs);
 
 		result.push({
 			url: pull.html_url,
@@ -139,9 +148,9 @@ function parsePullsFile(rawFile: string): IGithubPullParsed[] {
 			created: pull.created_at,
 			updated: pull.updated_at,
 			closed: pull.closed_at,
-			merged: pull.merged_at,
-			body: pull.body,
-			merge_commit_sha: pull.merge_commit_sha,
+			merged: pull.merged_at || null,
+			body: pull.body || null,
+			merge_commit_sha: pull.merge_commit_sha || null,
 
 			durationMs,
 			durationSeconds: dateDiffParsed.days,
@@ -194,15 +203,39 @@ function parsePulls(path): IGithubPullParsed[] {
  * write:  ./log/ curl-vscode-ISSUES-2023-06-07T09:17:34.772Z-PARSED.csv
  * write:  ./log/ curl-vscode-PULLS-2023-06-07T09:17:34.772Z-PARSED.csv
  */
-export function main() {
-	// for type checking
+export function parser(): IParsedData {
+	// TODO use stubs in unit-tests
 	const issuesMock: IGithubIssue[] = issues;
 	const pullsMock: IGithubPull[] = issues;
 
 	// configuration
-	const path = "./log/";
-	const pathIssues: string = path + "issues.responses/";
-	const pathPulls: string = path + "pulls.responses/";
+	const pathResponses = "./log/";
+	const pathIssues: string = pathResponses + "issues.responses/";
+	const pathPulls: string = pathResponses + "pulls.responses/";
+
+	// calculation
+	const parsedIssues: IGithubIssueParsed[] = parseIssues(pathIssues);
+	const parsedPulls: IGithubPullParsed[] = parsePulls(pathPulls);
+
+	console.log(
+		"parsed issues: ",
+		// parsedIssues[0],
+		parsedIssues.length,
+		"parsed pulls: ",
+		// parsedPulls[0],
+		parsedPulls.length
+	);
+
+	return {
+		parsedIssues: parsedIssues || [],
+		parsedPulls: parsedPulls || [],
+	};
+}
+
+/** TODO save to json with parse to x/y/name */
+export function saveParsedDataFiles(data: IParsedData) {
+	// configuration
+	const pathParsedFiles = "./log/";
 	const SEP = `\t`;
 	const headersIssues: TGithubIssueParsedHeader[] = [
 		"closed",
@@ -228,31 +261,20 @@ export function main() {
 
 	// calculation
 	const runDate = new Date().toISOString();
-	const parsedIssues: IGithubIssueParsed[] = parseIssues(pathIssues);
-	const parsedPulls: IGithubPullParsed[] = parsePulls(pathPulls);
-
-	console.log(
-		"parsed issues: ",
-		// parsedIssues[0],
-		parsedIssues.length,
-		"parsed pulls: ",
-		// parsedPulls[0],
-		parsedPulls.length
-	);
 
 	saveParsedData<IGithubIssueParsed>(
-		path,
+		pathParsedFiles,
 		`curl-vscode-ISSUES-${runDate}-PARSED.csv`,
-		parsedIssues,
+		data.parsedIssues,
 		headersIssues,
 		SEP
 		// 10
 	);
 
 	saveParsedData(
-		path,
+		pathParsedFiles,
 		`curl-vscode-PULLS-${runDate}-PARSED.csv`,
-		parsedPulls,
+		data.parsedPulls,
 		headersPulls,
 		SEP
 		// 10

@@ -13,7 +13,7 @@
  * [тут](./utils/freeplane/freeplane.sh) портативный рисователь нейросхем [freeplane](https://www.freeplane.org/), потомок почившего freemind, версия 1.11.1
  * рисователь мнемосхем пропатчен, увеличена память для экспорта картинок `JAVA_OPTS="-Xmx1000g $JAVA_OPTS"`
  * [тут](./doc/README.md) подробная документация и аналитика
- * [тут](./tokens/) bash скрипты с ENV VARIABLES и токенами для cloud api
+ * [тут](./tokens/) нужно сделать bash скрипты с ENV VARIABLES и токенами для cloud api
  * [тут](./doc/assets/) схемы, сырые данные и результаты анализа(архивы, таблицы excel)
  * [тут](./src/json-parse.github.ts) исходники парсера
 
@@ -31,7 +31,17 @@
 		git clone https://github.com/bskydive/process_modeling.git
 		cd process_modeling
 	```
- * подготовка данных
+ * загрузка данных с нуля
+	* [сделать токен](https://docs.github.com/ru/rest/guides/getting-started-with-the-rest-api) для REST API github
+	* вписать токен в [скрипт](./tokens/.gh-api-token.sh.empty)
+	* понеслась
+	```bash
+		mv ./tokens/.gh-api-token.sh.empty ./tokens/.gh-api-token.sh  #переименовать скрипт
+		bash ./src/scripts/download-issues.vscode.api.github.sh # загрузить данные
+		bash ./src/scripts/download-pulls.vscode.api.github.sh	# загрузить данные
+		bash ./src/scripts/validation.vscode.api.github.sh		# проверить количество данных
+	```
+ * подготовка данных из репы/архива
 	```bash
 		tar -xf ./assets/vscode.github/pulls.responses.tar.gz -C ./log/
 		tar -xf ./assets/vscode.github/issues.responses.tar.gz -C ./log/

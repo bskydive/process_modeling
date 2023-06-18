@@ -13,8 +13,8 @@ export interface IGithubPullParsed {
 	updated: string; // "updated_at": "2023-06-01T21:04:32Z",
 	closed: string; // "closed_at": "2023-06-01T10:21:27Z",
 	merged: string | null; // "merged_at": "2023-06-01T10:21:27Z",
-	body: string; // "body": "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't
-	merge_commit_sha: string; // "merge_commit_sha": "9170aa877cecbb84c5fd7e2d0d988fdca70c21b1",
+	body: string | null; // "body": "> turn snippetsPreventQuickSuggestions to true and ensure typing in a snippet placeholder doesn't
+	merge_commit_sha: string | null; // "merge_commit_sha": "9170aa877cecbb84c5fd7e2d0d988fdca70c21b1",
 
 	// duration = Date(closed) - Date(created)
 	durationMs: number;
