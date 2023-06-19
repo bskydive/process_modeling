@@ -2,10 +2,8 @@ import * as Graph from "plotly.js";
 import ISSUES_RAW from "./model/issues-closed.json";
 import { ILineGraphIssuesRaw } from "./model/issues-closed.model";
 
-function parseUIData(
-	dataParsed: ILineGraphIssuesRaw
-): Partial<Graph.PlotData>[] {
-	let result: Partial<Graph.PlotData>[];
+function parseUIData(dataParsed: ILineGraphIssuesRaw): ILineGraphIssuesRaw[] {
+	let result: ILineGraphIssuesRaw[];
 
 	result = [dataParsed];
 
@@ -29,29 +27,53 @@ function main() {
 	const commitsGraphRootId = "id-graph-commits-user";
 	// const dataParsed: IParsedData = parser(); // TODO solve file read issue for brpwser build
 	const dataParsed: ILineGraphIssuesRaw = {
-		...ISSUES_RAW[0],
-		xaxis: "date",
-		yaxis: "hours",
-		name: 'username'
+		x: ISSUES_RAW[0].x,
+		y: ISSUES_RAW[0].y,
+		mode: "lines+markers",
+		line: {
+			shape: "spline",
+			dash: "solid",
+			width: 4,
+		},
+		type: "scatter",
+		name: "username1",
+		connectgaps: true,
 	};
 
-	let dataGraph: Partial<Graph.PlotData>[] = parseUIData(dataParsed);
-	let layout: Partial<Graph.Layout> = { width: 600, height: 400 };
+	let dataGraph: ILineGraphIssuesRaw[] = parseUIData(dataParsed);
+	let layout: Partial<Graph.Layout> = {
+		// width: 900,
+		height: 800,
+		xaxis: { title: "date" },
+		yaxis: { title: "hours" },
+		title: { text: "Hours by issue" },
+		showlegend: true,
+		legend: {
+			y: 0.5,
+			traceorder: "reversed",
+			font: {
+				size: 16,
+			},
+		},
+	};
 	let config: Partial<Graph.Config> = {
-		displaylogo: false,
+		// displaylogo: false,
 		plotGlPixelRatio: 2,
 	};
 	console.log("UI render started");
 
 	let commitGraph$: Promise<Graph.PlotlyHTMLElement> = Graph.newPlot(
 		commitsGraphRootId,
-		dataGraph,
+		dataGraph as unknown as Partial<Graph.PlotData>[],
 		layout,
 		config
 	);
 
 	commitGraph$.then((graph) =>
-		console.log("UI render completed ", graph.childNodes.length)
+		console.log(
+			"UI render completed ",
+			graph.childNodes.item(0).childNodes.length
+		)
 	);
 
 	// Graph.toImage(commitsGraphRootId).then((file)=>console.log('file:', file.length));

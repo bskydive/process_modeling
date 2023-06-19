@@ -4,7 +4,30 @@
 	<script defer src="dist/browser/plotly.js"></script>
 	<!-- <script type="module">
 		import "https://cdn.plot.ly/plotly-2.24.2.min.js"
-		Plotly.newPlot("id-graph-commits-user", [{ y: [1, 2, 3] }])
+		Plotly.newPlot("id-graph-commits-user", 
+			[{ // data
+				x: [10, 20, 30],
+				y: [1, 2, 3],
+				xaxis: "date" ,
+				yaxis: "hours",
+				mode: "lines",
+				line: { shape: "spline" },
+				type: "scatter",
+				name: "username",
+				title: "Hours by issue"
+			}],
+			{ // layout
+				width: 900,
+				height: 800,
+				xaxis: { title: "date" },
+				yaxis: { title: "hours" },
+				title: { text: "Hours by issue" }
+			},
+			{ // config
+				// displaylogo: false,
+				plotGlPixelRatio: 2,
+			}
+		)
 	</script> -->
 </head>
 
