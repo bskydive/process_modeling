@@ -11,6 +11,7 @@ import {
 } from "./model/vscode.pulls-closed.response";
 import * as fsUtils from "./fs-utils";
 import * as mathUtils from "./math-utils";
+import { saveDataJSON } from "./fs-utils";
 
 export interface IParsedData {
 	parsedIssues: IGithubIssueParsed[];
@@ -235,7 +236,12 @@ export function parser(): IParsedData {
 /** TODO save to json with parse to x/y/name */
 export function saveParsedDataFiles(data: IParsedData) {
 	// configuration
-	const pathParsedFiles = "./log/";
+	const pathParsedJSON = "./src/graph/model/";
+	const pathParsedJSONIssuesFileName = "issues-closed.vscode.json";
+	const pathParsedJSONPullsFileName = "pulls-closed.vscode.json";
+	
+	const MAX_LINES_TO_SAVE = 30;
+	const pathParsedCSV = "./log/";
 	const SEP = `\t`;
 	const headersIssues: TGithubIssueParsedHeader[] = [
 		"closed",
@@ -263,20 +269,34 @@ export function saveParsedDataFiles(data: IParsedData) {
 	const runDate = new Date().toISOString();
 
 	saveParsedData<IGithubIssueParsed>(
-		pathParsedFiles,
+		pathParsedCSV,
 		`curl-vscode-ISSUES-${runDate}-PARSED.csv`,
 		data.parsedIssues,
 		headersIssues,
 		SEP
-		// 10
+		// MAX_LINES_TO_SAVE
 	);
 
 	saveParsedData(
-		pathParsedFiles,
+		pathParsedCSV,
 		`curl-vscode-PULLS-${runDate}-PARSED.csv`,
 		data.parsedPulls,
 		headersPulls,
 		SEP
-		// 10
+		// MAX_LINES_TO_SAVE
+	);
+
+	saveDataJSON<IGithubIssueParsed>(
+		pathParsedJSON,
+		pathParsedJSONIssuesFileName,
+		data.parsedIssues,
+		// MAX_LINES_TO_SAVE
+	);
+
+	saveDataJSON<IGithubPullParsed>(
+		pathParsedJSON,
+		pathParsedJSONPullsFileName,
+		data.parsedPulls,
+		// MAX_LINES_TO_SAVE
 	);
 }

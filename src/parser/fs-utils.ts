@@ -26,25 +26,39 @@ export function readData(path: string, fileName: string): string {
 	return result;
 }
 
-/** Inserts the file name with date at the beginning of the file */
-export function saveDataTEXT(path: string, fileName: string, data: string) {
+/** 
+ * Inserts the file name with date at the beginning of the file 
+ * TODO implement linesCount
+ */
+export function saveDataTEXT(path: string, fileName: string, data: string,
+	linesCount?: number) {
 	const firstLine: string = fileName + `\n`;
 	try {
 		fs.writeFileSync(path + fileName, firstLine + data, "utf8");
-		console.log("write: ", path, fileName);
+		console.log("write: ", path + fileName, data.length);
 	} catch (error) {
 		console.log("FS write error:", error);
 	}
 }
 
-/** @deprecated TODO remove */
+/** 
+ * TODO implement linesCount 
+ * TODO remove unusual line terminators
+ */
 export function saveDataJSON<D>(
 	path: string,
 	fileName: string,
 	data: D[],
-	linesCount: number = 30
+	linesCount?: number
 ) {
 	let result: string = "";
 	result = JSON.stringify(data, null, 4);
+
+	try {
+		fs.writeFileSync(path + fileName, result, "utf8");
+		console.log("write: ", path + fileName, data?.length);
+	} catch (error) {
+		console.log("FS write error:", error);
+	}
 }
 

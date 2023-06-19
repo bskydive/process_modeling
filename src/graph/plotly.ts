@@ -1,70 +1,98 @@
-import * as Graph from "plotly.js";
-import ISSUES_RAW from "./model/issues-closed.json";
-import { ILineGraphIssuesRaw } from "./model/issues-closed.model";
+import * as Plot from "plotly.js";
+import ISSUES_STUB_RAW from "./model/issues-closed.stub.json";
+import ISSUES_RAW from "./model/issues-closed.vscode.json";
+import {
+	TPlotLine,
+	IUserValues,
+	USER_VALUES_EMPTY,
+	TPlotLineData,
+	LINE_PLOT_SETTINGS,
+	LAYOUT_PLOT_SETTINGS,
+} from "./model/issues-closed.model";
+import { IGithubIssueParsed } from "../parser/model/vscode.issues-closed.response";
 
-function parseUIData(dataParsed: ILineGraphIssuesRaw): ILineGraphIssuesRaw[] {
-	let result: ILineGraphIssuesRaw[];
+function parsePullsPlotLines(data: IGithubIssueParsed[]): TPlotLineData[] {
+	// TODO for pulls use also issue.assignees[0]
+	return [];
+}
 
-	result = [dataParsed];
+/** TODO fill empty date values */
+function parseIssuesPlotLines(data: IGithubIssueParsed[]): TPlotLine[] {
+	let plotLines: TPlotLine[] = [];
+	/** add issues without assignee or user */
+	let plotUserDataGroups: Map<string, IUserValues> = new Map<
+		string,
+		IUserValues
+	>([["none", USER_VALUES_EMPTY]]);
+	/** add start 0 value for all lines */
+	const startDate: string = data[data.length-1].closed;
 
-	// result = [
-	// 	{
-	// 		x: dataParsed.parsedIssues.map((issue) => issue.closed),
-	// 		y: dataParsed.parsedIssues.map(
-	// 			(issue) => issue.durationHoursRawFloat
-	// 		),
-	// 	},
-	// ];
+	// group values by users
+	data.forEach((issue) => {
+		const userName: string = issue.user ?? issue.assignee ?? "none";
+		/** accumulator for existed user in Map() */
+		let valuePrev: IUserValues | undefined =
+			plotUserDataGroups.get(userName);
+		/** 
+		 * initial value for new user in Map() 
+		 */
+		let valueNext: IUserValues = {
+			dates: [issue.closed],
+			hours: [issue.durationHoursRawFloat],
+		};
 
-	return result;
+		if (valuePrev) {
+			valueNext.dates = valuePrev.dates.concat(issue.closed);
+			valueNext.hours = valuePrev.hours.concat(issue.durationHoursRawFloat);
+		}
+
+		plotUserDataGroups.set(userName, valueNext);
+	});
+
+	// convert groups to plot lines, map data to axes
+	plotUserDataGroups.forEach((line, user) => {
+		plotLines.push({
+			...LINE_PLOT_SETTINGS,
+			x: line.dates,
+			y: line.hours,
+			name: user,
+		});
+	});
+
+	return plotLines;
 }
 
 /**
- *  TODO use https://www.npmjs.com/package/angular-plotly.js
+ * TODO use https://www.npmjs.com/package/angular-plotly.js
  * TODO add name(user) https://plotly.com/python/line-charts/#line-plot-modes
  */
 function main() {
+	/** TODO use in unit test */
+	const testStub: IGithubIssueParsed[] = ISSUES_STUB_RAW;
 	const commitsGraphRootId = "id-graph-commits-user";
-	// const dataParsed: IParsedData = parser(); // TODO solve file read issue for brpwser build
-	const dataParsed: ILineGraphIssuesRaw = {
-		x: ISSUES_RAW[0].x,
-		y: ISSUES_RAW[0].y,
-		mode: "lines+markers",
-		line: {
-			shape: "spline",
-			dash: "solid",
-			width: 4,
-		},
-		type: "scatter",
-		name: "username1",
-		connectgaps: true,
-	};
+	// TODO load from file.read, not JSON import
+	// const dataParsed: IGithubIssueParsed[] = parser();
+	/**
+	 * need `as unknown` because of IDE tsc JSON parse error
+	 */
+	const dataParsed: IGithubIssueParsed[] = ISSUES_RAW as unknown as IGithubIssueParsed[]
+	const dataLines: TPlotLine[] = parseIssuesPlotLines(dataParsed);
 
-	let dataGraph: ILineGraphIssuesRaw[] = parseUIData(dataParsed);
-	let layout: Partial<Graph.Layout> = {
-		// width: 900,
-		height: 800,
+	let layout: Partial<Plot.Layout> = {
+		...LAYOUT_PLOT_SETTINGS,
 		xaxis: { title: "date" },
 		yaxis: { title: "hours" },
 		title: { text: "Hours by issue" },
-		showlegend: true,
-		legend: {
-			y: 0.5,
-			traceorder: "reversed",
-			font: {
-				size: 16,
-			},
-		},
 	};
-	let config: Partial<Graph.Config> = {
+	let config: Partial<Plot.Config> = {
 		// displaylogo: false,
 		plotGlPixelRatio: 2,
 	};
 	console.log("UI render started");
 
-	let commitGraph$: Promise<Graph.PlotlyHTMLElement> = Graph.newPlot(
+	let commitGraph$: Promise<Plot.PlotlyHTMLElement> = Plot.newPlot(
 		commitsGraphRootId,
-		dataGraph as unknown as Partial<Graph.PlotData>[],
+		dataLines,
 		layout,
 		config
 	);
@@ -72,7 +100,7 @@ function main() {
 	commitGraph$.then((graph) =>
 		console.log(
 			"UI render completed ",
-			graph.childNodes.item(0).childNodes.length
+			graph.innerHTML.length
 		)
 	);
 

@@ -4,9 +4,9 @@ export interface IGithubPullParsed {
 	id: number; // "id": 1735940057,
 	number: number; // "number": 184041,
 	title: string; // "title": "Setting `snippetsPreventQuickSuggestions` is not considered",
-	user: string | null; // "login": "deepak1556",
+	user: string; // "login": "deepak1556",
 	state: string; // "state": "closed",
-	assignee: string | null; // "login": "deepak1556",
+	assignee: string; // "login": "deepak1556",
 
 	// Date format: ISO UTC
 	created: string; // "created_at": "2023-06-01T10:01:54Z",
@@ -47,7 +47,7 @@ export interface IGithubPull {
 	closed_at: string;
 	merged_at?: string;
 	merge_commit_sha?: string;
-	assignee: User | null;
+	assignee: User;
 	assignees: User[];
 	requested_reviewers?: any[];
 	requested_teams?: any[];
