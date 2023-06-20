@@ -10,7 +10,8 @@ token_file="tokens/.gh-api-token.sh"
 echo token ${gh_api_token}
 
 rundate=`date +%H.%M.%S_%d.%m.%Y`
-output_path="log"
+output_path="log/issues.responses"
+mkdir -p ${output_path}
 
 # download issues
 

@@ -18,3 +18,6 @@ path="log/pulls.responses/"
 echo -e "PULLS FILES: `ls ${path} | wc -l`"
 echo -e "PULLS: `grep --include=\*.json -RiEn '"html_url": "https://github.com/microsoft/vscode/pull/' ${path} | wc -l`"
 
+path="log/commits.responses/"
+echo -e "COMMITS FILES: `ls ${path} | wc -l`"
+echo -e "COMMITS: `grep --include=\*.json -RiEn '"html_url": "https://github.com/microsoft/vscode/commit/' ${path} | wc -l`"

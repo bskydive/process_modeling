@@ -55,10 +55,11 @@
 	* вписать токен в [скрипт](./tokens/.gh-api-token.sh.empty)
 	* понеслась
 	```bash
-		mv ./tokens/.gh-api-token.sh.empty ./tokens/.gh-api-token.sh  #переименовать скрипт
-		bash ./src/scripts/download-issues.vscode.api.github.sh # загрузить данные
-		bash ./src/scripts/download-pulls.vscode.api.github.sh	# загрузить данные
-		bash ./src/scripts/validation.vscode.api.github.sh		# проверить количество данных
+		mv ./tokens/.gh-api-token.sh.empty ./tokens/.gh-api-token.sh	#переименовать скрипт
+		bash ./src/scripts/download-issues.vscode.api.github.sh			# загрузить данные ISSUES
+		bash ./src/scripts/download-pulls.vscode.api.github.sh			# загрузить данные PULLS
+		bash ./src/scripts/download-commits.vscode.api.github.sh		# загрузить данные COMMITS
+		bash ./src/scripts/validation.vscode.api.github.sh				# проверить количество данных
 	```
  * подготовка данных из репы/архива
 	```bash

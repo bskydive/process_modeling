@@ -10,12 +10,13 @@ token_file="tokens/.gh-api-token.sh"
 echo token ${gh_api_token}
 
 rundate=`date +%H.%M.%S_%d.%m.%Y`
-output_path="log"
+output_path="log/commits.responses"
+mkdir -p ${output_path}
 
 # download PR's
 
 page_max=3673 # see Link response header
-page_max=10
+#page_max=10
 
 for (( page=1 ; page<=${page_max} ; page++ )); do
 
