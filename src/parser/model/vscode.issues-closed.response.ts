@@ -27,6 +27,14 @@ export interface IGithubIssueParsed {
 
 export type TGithubIssueParsedHeader = keyof IGithubIssueParsed;
 
+/**
+ * https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-issues-assigned-to-the-authenticated-user
+ * curl -L \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <YOUR-TOKEN>"\
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/issues
+ */
 export interface IGithubIssue {
 	url: string;
 	repository_url: string;

@@ -11,6 +11,11 @@ GET https://api.github.com/repos/microsoft/vscode/pulls?state=closed&page=1
 Accept: application/vnd.github+json
 Authorization: Bearer {{gh-api-token}}
 
+###
+
+GET https://api.github.com/repos/microsoft/vscode/commits
+Accept: application/vnd.github+json
+Authorization: Bearer {{gh-api-token}}
 
 #&page=236
 # https://github.com/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released
