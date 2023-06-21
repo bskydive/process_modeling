@@ -9,13 +9,18 @@ import {
 	IGithubPullParsed,
 	TGithubPullParsedHeader,
 } from "./model/vscode.pulls-closed.response";
+import {
+	IGithubCommit,
+	IGithubCommitParsed,
+	TGithubCommitParsedHeader,
+} from "./model/vscode.commits.response";
 import * as fsUtils from "./fs-utils";
 import * as mathUtils from "./math-utils";
-import { saveDataJSON } from "./fs-utils";
 
 export interface IParsedData {
 	parsedIssues: IGithubIssueParsed[];
 	parsedPulls: IGithubPullParsed[];
+	parsedCommits: IGithubCommitParsed[];
 }
 
 /** @deprecated TODO remove or use */
@@ -23,94 +28,31 @@ type TDataParsed = IGithubIssueParsed | IGithubPullParsed;
 /** @deprecated TODO remove or use */
 type TDataParsedHeader = TGithubIssueParsedHeader | TGithubPullParsedHeader;
 
-/**
- * @param itemList - array of objects
- * @param headers - array with column(keys) order
- * @param separator - for CSV
- * @returns Concatenated values with strict order and newline endings
- */
-function concatWithSeparators<D>(
-	itemList: D[],
-	headers: Partial<keyof D>[],
-	EOL: string,
-	SEP: string
-): string {
-	let result: string[];
-
-	result = itemList.map((item: D) => {
-		let itemString: string = String(item[headers[0]]);
-
-		for (let i = 1; i < headers.length; i++) {
-			itemString += SEP + String(item[headers[i]]);
-		}
-
-		return itemString;
-	});
-
-	return result.join(EOL);
-}
-
-/**
- *
- * @param path
- * @param fileName
- * @param data - parsed data
- * @param SEP - CSV separator
- * @param linesCount
- * @returns
- * number:assignee:created:closed:durationMs:durationDate
- * 184041:jrieken:2023-06-01T10:01:54Z:2023-06-01T10:21:27Z:1173000:00D-00H-19M-33S
- */
-function saveParsedData<D>(
-	path: string,
-	fileName: string,
-	data: D[],
-	headers: (keyof D)[],
-	SEP: string,
-	linesCount?: number
-) {
-	// Make the first line with CSV column names
-	let result: string = `${headers.join(SEP)}\n`;
-
-	if (linesCount) {
-		result += concatWithSeparators<D>(
-			data.slice(0, linesCount),
-			headers,
-			`\n`,
-			SEP
-		);
-	} else {
-		result += concatWithSeparators<D>(data, headers, `\n`, SEP);
-	}
-
-	fsUtils.saveDataTEXT(path, fileName, result);
-}
-
 function parseIssuesFile(rawFile: string): IGithubIssueParsed[] {
 	const issueList: IGithubIssue[] = JSON.parse(rawFile);
 	const result: IGithubIssueParsed[] = [];
 
-	issueList.forEach((issue: IGithubIssue) => {
+	issueList.forEach((data: IGithubIssue) => {
 		const durationMs: number =
-			new Date(issue.closed_at).valueOf() -
-			new Date(issue.created_at).valueOf();
+			new Date(data.closed_at).valueOf() -
+			new Date(data.created_at).valueOf();
 
 		const dateDiffParsed: mathUtils.IDateDiffParsed =
 			mathUtils.msToDate(durationMs);
 
 		result.push({
-			url: issue.html_url,
-			id: issue.id,
-			number: issue.number,
-			title: issue.title,
-			user: issue?.user?.login || null,
-			state: issue.state,
-			assignee: issue?.assignee?.login || null,
-			comments_length: issue.comments,
-			created: issue.created_at,
-			updated: issue.updated_at,
-			closed: issue.closed_at,
-			body: issue.body,
+			url: data.html_url,
+			id: data.id,
+			number: data.number,
+			title: data.title,
+			user: data?.user?.login || null,
+			state: data.state,
+			assignee: data?.assignee?.login || null,
+			comments_length: data.comments,
+			created: data.created_at,
+			updated: data.updated_at,
+			closed: data.closed_at,
+			body: data.body,
 
 			durationMs,
 			durationSeconds: dateDiffParsed.days,
@@ -127,31 +69,31 @@ function parseIssuesFile(rawFile: string): IGithubIssueParsed[] {
 
 /** @deprecated TODO dedupe with parseIssuesFile */
 function parsePullsFile(rawFile: string): IGithubPullParsed[] {
-	const issueList: IGithubPull[] = JSON.parse(rawFile);
+	const pullList: IGithubPull[] = JSON.parse(rawFile);
 	const result: IGithubPullParsed[] = [];
 
-	issueList.forEach((pull: IGithubPull) => {
+	pullList.forEach((data: IGithubPull) => {
 		const durationMs: number =
-			new Date(pull.closed_at).valueOf() -
-			new Date(pull.created_at).valueOf();
+			new Date(data.closed_at).valueOf() -
+			new Date(data.created_at).valueOf();
 
 		const dateDiffParsed: mathUtils.IDateDiffParsed =
 			mathUtils.msToDate(durationMs);
 
 		result.push({
-			url: pull.html_url,
-			id: pull.id,
-			number: pull.number,
-			title: pull.title,
-			user: pull?.user?.login || null,
-			state: pull.state,
-			assignee: pull?.assignee?.login || null,
-			created: pull.created_at,
-			updated: pull.updated_at,
-			closed: pull.closed_at,
-			merged: pull.merged_at || null,
-			body: pull.body || null,
-			merge_commit_sha: pull.merge_commit_sha || null,
+			url: data.html_url,
+			id: data.id,
+			number: data.number,
+			title: data.title,
+			user: data?.user?.login || null,
+			state: data.state,
+			assignee: data?.assignee?.login || null,
+			created: data.created_at,
+			updated: data.updated_at,
+			closed: data.closed_at,
+			merged: data.merged_at || null,
+			body: data.body || null,
+			merge_commit_sha: data.merge_commit_sha || null,
 
 			durationMs,
 			durationSeconds: dateDiffParsed.days,
@@ -166,34 +108,67 @@ function parsePullsFile(rawFile: string): IGithubPullParsed[] {
 	return result;
 }
 
+function parseCommitsFile(rawFile: string): IGithubCommitParsed[] {
+	const commitList: IGithubCommit[] = JSON.parse(rawFile);
+	const result: IGithubCommitParsed[] = [];
+
+	commitList.forEach((data: IGithubCommit) => {
+		result.push({
+			sha: data.sha,
+			url: data.html_url,
+			author: data.author?.login || data.committer?.login,
+			date: data.commit.author.date,
+			message: data.commit.message,
+		});
+	});
+
+	return result;
+}
+
 function parseIssues(path: string): IGithubIssueParsed[] {
 	const issuesFileNameList: string[] = fsUtils.listFiles(path);
-	let parsedIssues: IGithubIssueParsed[] = [];
+	let result: IGithubIssueParsed[] = [];
 	// console.log('files',path, issuesFileNameList);
 
 	issuesFileNameList.forEach((fileName: string) => {
 		// console.log("parse issue", path, fileName);
 		const rawFile = fsUtils.readData(path, fileName);
-		parsedIssues.push(...parseIssuesFile(rawFile));
+		result.push(...parseIssuesFile(rawFile));
 	});
 
 	// console.log("issues parsed", issuesFileNameList[0], issuesFileNameList.length);
-	return parsedIssues;
+	return result;
 }
 
+/** @deprecated TODO dedupe */
 function parsePulls(path): IGithubPullParsed[] {
 	const pullsFileNameList: string[] = fsUtils.listFiles(path);
-	let parsedPulls: IGithubPullParsed[] = [];
+	let result: IGithubPullParsed[] = [];
 
 	pullsFileNameList.forEach((fileName: string) => {
 		const rawFile = fsUtils.readData(path, fileName);
 		// console.log("parse pull", path, fileName);
-		parsedPulls.push(...parsePullsFile(rawFile));
+		result.push(...parsePullsFile(rawFile));
 	});
 
 	// console.log("pulls parsed",pullsFileNameList[0],pullsFileNameList.length,);
 
-	return parsedPulls;
+	return result;
+}
+
+function parseCommits(path): IGithubCommitParsed[] {
+	const commitsFileNameList: string[] = fsUtils.listFiles(path);
+	let result: IGithubCommitParsed[] = [];
+
+	commitsFileNameList.forEach((fileName: string) => {
+		const rawFile = fsUtils.readData(path, fileName);
+		// console.log("parse pull", path, fileName);
+		result.push(...parseCommitsFile(rawFile));
+	});
+
+	// console.log("commits parsed",commitsFileNameList[0],commitsFileNameList.length,);
+
+	return result;
 }
 
 /**
@@ -213,10 +188,12 @@ export function parser(): IParsedData {
 	const pathResponses = "./log/";
 	const pathIssues: string = pathResponses + "issues.responses/";
 	const pathPulls: string = pathResponses + "pulls.responses/";
+	const pathCommits: string = pathResponses + "commits.responses/";
 
 	// calculation
 	const parsedIssues: IGithubIssueParsed[] = parseIssues(pathIssues);
 	const parsedPulls: IGithubPullParsed[] = parsePulls(pathPulls);
+	const parsedCommits: IGithubCommitParsed[] = parseCommits(pathCommits);
 
 	console.log(
 		"parsed issues: ",
@@ -224,24 +201,29 @@ export function parser(): IParsedData {
 		parsedIssues.length,
 		"parsed pulls: ",
 		// parsedPulls[0],
-		parsedPulls.length
+		parsedPulls.length,
+		"parsed commits: ",
+		// parsedCommits[0],
+		parsedCommits.length
 	);
 
 	return {
 		parsedIssues: parsedIssues || [],
 		parsedPulls: parsedPulls || [],
+		parsedCommits: parsedCommits || [],
 	};
 }
 
 /** TODO save to json with parse to x/y/name */
 export function saveParsedDataFiles(data: IParsedData) {
 	// configuration
-	const pathParsedJSON = "./src/graph/model/";
+	const pathParsedJSON = "./src/graph/data/";
+	const pathParsedJSONCommitsFileName = "commits.vscode.json";
 	const pathParsedJSONIssuesFileName = "issues-closed.vscode.json";
 	const pathParsedJSONPullsFileName = "pulls-closed.vscode.json";
 	
 	const MAX_LINES_TO_SAVE = 30;
-	const pathParsedCSV = "./log/";
+	const pathParsedCSV = "./log/csv/";
 	const SEP = `\t`;
 	const headersIssues: TGithubIssueParsedHeader[] = [
 		"closed",
@@ -264,11 +246,18 @@ export function saveParsedDataFiles(data: IParsedData) {
 		"durationDate",
 		"url",
 	];
+	const headersCommits: TGithubCommitParsedHeader[] = [
+		"date",
+		"author",
+		"sha",
+		"message",
+		"url",
+	];
 
 	// calculation
 	const runDate = new Date().toISOString();
 
-	saveParsedData<IGithubIssueParsed>(
+	fsUtils.saveDataCSV<IGithubIssueParsed>(
 		pathParsedCSV,
 		`curl-vscode-ISSUES-${runDate}-PARSED.csv`,
 		data.parsedIssues,
@@ -277,7 +266,7 @@ export function saveParsedDataFiles(data: IParsedData) {
 		// MAX_LINES_TO_SAVE
 	);
 
-	saveParsedData(
+	fsUtils.saveDataCSV(
 		pathParsedCSV,
 		`curl-vscode-PULLS-${runDate}-PARSED.csv`,
 		data.parsedPulls,
@@ -286,17 +275,33 @@ export function saveParsedDataFiles(data: IParsedData) {
 		// MAX_LINES_TO_SAVE
 	);
 
-	saveDataJSON<IGithubIssueParsed>(
+	fsUtils.saveDataCSV(
+		pathParsedCSV,
+		`curl-vscode-COMMITS-${runDate}-PARSED.csv`,
+		data.parsedCommits,
+		headersCommits,
+		SEP
+		// MAX_LINES_TO_SAVE
+	);
+
+	fsUtils.saveDataJSON<IGithubIssueParsed>(
 		pathParsedJSON,
 		pathParsedJSONIssuesFileName,
 		data.parsedIssues,
 		// MAX_LINES_TO_SAVE
 	);
 
-	saveDataJSON<IGithubPullParsed>(
+	fsUtils.saveDataJSON<IGithubPullParsed>(
 		pathParsedJSON,
 		pathParsedJSONPullsFileName,
 		data.parsedPulls,
+		// MAX_LINES_TO_SAVE
+	);
+
+	fsUtils.saveDataJSON<IGithubCommitParsed>(
+		pathParsedJSON,
+		pathParsedJSONCommitsFileName,
+		data.parsedCommits,
 		// MAX_LINES_TO_SAVE
 	);
 }

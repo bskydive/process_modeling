@@ -1,7 +1,23 @@
 /** Avoid optional keys to prevent header/columns sorting errors */
-export interface IGithubCommitParsed {}
+export interface IGithubCommitParentsParsed {
+	// TODO add parents to commits parser
+	sha: string; // "sha": "66ee561355246bdb03909816bebe269bb6c3c278",
+	author: string; // "author": {"login": "jrieken",
+	url: string; // "html_url": "https://github.com/microsoft/vscode/commit/66ee561355246bdb03909816bebe269bb6c3c278",
+	date: string; // "commit": {"author": {"date": "2023-06-20T13:04:41Z"
+	message: string; // "message": "Merge pull request #182571 from russelldavis/smartSelectSubwordsOption\n\nAdd option for smartSelect to ignore subwords",
+	parents: IGithubCommitParsed[];
+}
 
-export type TGithubPullParsedHeader = keyof IGithubCommitParsed;
+export interface IGithubCommitParsed {
+	sha: string; // "sha": "66ee561355246bdb03909816bebe269bb6c3c278",
+	author: string; // "author": {"login": "jrieken",
+	url: string; // "html_url": "https://github.com/microsoft/vscode/commit/66ee561355246bdb03909816bebe269bb6c3c278",
+	date: string; // "commit": {"date": "2023-06-20T13:04:41Z"
+	message: string; // "message": "Merge pull request #182571 from russelldavis/smartSelectSubwordsOption\n\nAdd option for smartSelect to ignore subwords",
+}
+
+export type TGithubCommitParsedHeader = keyof IGithubCommitParsed;
 
 /** 
  * https://docs.github.com/en/rest/commits/commits?apiVersion=2022-11-28
@@ -51,7 +67,7 @@ interface Author2 {
 }
 
 interface Commit {
-	author: Author;
+	author: Author | null;
 	committer: Author;
 	message: string;
 	tree: Tree;

@@ -1,6 +1,6 @@
 import * as Plot from "plotly.js";
 import ISSUES_STUB_RAW from "./model/issues-closed.stub.json";
-import ISSUES_RAW from "./model/issues-closed.vscode.json";
+import ISSUES_RAW from "./data/issues-closed.vscode.json";
 import {
 	TPlotLine,
 	IUserValues,
@@ -8,7 +8,7 @@ import {
 	TPlotLineData,
 	LINE_PLOT_SETTINGS,
 	LAYOUT_PLOT_SETTINGS,
-} from "./model/issues-closed.model";
+} from "./model/plot-line.model";
 import { IGithubIssueParsed } from "../parser/model/vscode.issues-closed.response";
 
 function parsePullsPlotLines(data: IGithubIssueParsed[]): TPlotLineData[] {
@@ -63,7 +63,6 @@ function parseIssuesPlotLines(data: IGithubIssueParsed[]): TPlotLine[] {
 }
 
 /**
- * TODO use https://www.npmjs.com/package/angular-plotly.js
  * TODO add name(user) https://plotly.com/python/line-charts/#line-plot-modes
  */
 function main() {

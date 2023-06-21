@@ -14,9 +14,12 @@
  	* рисователь мнемосхем пропатчен, увеличена память для экспорта картинок `JAVA_OPTS="-Xmx1000g $JAVA_OPTS"`
  * [тут](./assets/github.api.http) скрипты для плагина vscode [humao.rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
  * [тут](./doc/README.md) подробная документация и аналитика
- * [тут](./tokens/) нужно сделать bash скрипты с ENV VARIABLES и токенами для cloud api
- * [тут](./doc/assets/) схемы, сырые данные и результаты анализа(архивы, таблицы excel)
+ * [тут](./tokens/) bash скрипты с ENV VARIABLES и токенами для cloud api
+ * [тут](./doc/assets/) нейросхемы, сырые данные(архивы, csv, таблицы excel)
  * [тут](./src/json-parse.github.ts) исходники парсера
+ * [тут](./log) промежуточные данные: JSON, CSV файлы парсера и скриптов загрузки из cloud API
+ * [тут](./log/csv) выходные данные CSV парсера
+ * [тут](./src/graph/data/) выходные JSON данные парсера для web UI
 
 ## Для кого?
 
@@ -72,6 +75,15 @@
 		nvm i 20
 		npm i
 		npm run parse
+
+		# вывод парсера
+		# parsed issues:  7110 parsed pulls:  21183 parsed commits:  110168
+		# write:  ./log/csv/curl-vscode-ISSUES-2023-06-21T15:48:30.224Z-PARSED.csv 955429
+		# write:  ./log/csv/curl-vscode-PULLS-2023-06-21T15:48:30.224Z-PARSED.csv 3654447
+		# write:  ./log/csv/curl-vscode-COMMITS-2023-06-21T15:48:30.224Z-PARSED.csv 23634225
+		# write:  ./src/graph/data/issues-closed.vscode.json 7110
+		# write:  ./src/graph/data/pulls-closed.vscode.json 21183
+		# write:  ./src/graph/data/commits.vscode.json 110168
 	```
  * смотрим выходные данные парсера
 	* csv файлы для excel в `./log/`
@@ -90,8 +102,29 @@
 
 ## TODO
 
- * проверить работу отладчика nodejs
- * запилить кучу графиков
+ * сделать парсер и визуализатор данных о процессах
+	* проверить работу отладчика nodejs
+	* проверить развёртывание с нуля
+	* запилить кучу графиков
+	* JSON.parse: remove unusual line terminators
+ * сделать движок моделирования
+	* модель модели данных
+	* конфигуратор алгоритма модели
+		* графы
+		* парсер yEd
+	* машина состояний
+	* логирование
+	* отладка состояний
+	* парсер выходных данных
+ * подключить движок моделирования к визуализатору
+	* парсер входных данных
+ * сделать режим обратного проектирования
+	* угадываем параметры модели по выходным данным
+ * добавить ещё больше парсеров входных данных
+	* JIRA
+	* gitlab
+	* bitbucket
+	* https://www.npmjs.com/package/angular-plotly.js
 
 ## Как связаться с автором?
 
