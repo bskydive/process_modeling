@@ -108,6 +108,10 @@
 		npm run start
 	```
  * открываем в браузере `http://127.0.0.1:8080`
+ * ![](./doc/картинки/issues-hours.jpg)
+ * ![](./doc/картинки/pulls-hours.jpg)
+ * ![](./doc/картинки/commits-hour.jpg)
+
 
 ## TODO
 
