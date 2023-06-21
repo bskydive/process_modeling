@@ -7,17 +7,24 @@ export type TPlotLineSettings = Partial<Pick<
 	"mode" | "line" | "type" | "connectgaps"
 >>;
 
+export interface IPlotLineTitles {
+	xTitle: string;
+	yTitle: string;
+	plotTitle: string;
+	legendTitle: string;
+}
+
 /** One line on the graph */
 export type TPlotLine = TPlotLineData | TPlotLineSettings;
 
-export interface IUserValues {
+export interface IDatesNumbersPlotLine {
 	dates: string[];
-	hours: number[];
+	values: number[];
 }
 
-export const USER_VALUES_EMPTY = {
+export const USER_VALUES_EMPTY: IDatesNumbersPlotLine = {
 	dates: [],
-	hours: [],
+	values: [],
 };
 
 export const LINE_PLOT_SETTINGS: TPlotLineSettings = {

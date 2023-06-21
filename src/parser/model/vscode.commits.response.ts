@@ -1,12 +1,9 @@
 /** Avoid optional keys to prevent header/columns sorting errors */
-export interface IGithubCommitParentsParsed {
-	// TODO add parents to commits parser
-	sha: string; // "sha": "66ee561355246bdb03909816bebe269bb6c3c278",
+export interface IGithubCommitDataParsed {
 	author: string; // "author": {"login": "jrieken",
-	url: string; // "html_url": "https://github.com/microsoft/vscode/commit/66ee561355246bdb03909816bebe269bb6c3c278",
 	date: string; // "commit": {"author": {"date": "2023-06-20T13:04:41Z"
-	message: string; // "message": "Merge pull request #182571 from russelldavis/smartSelectSubwordsOption\n\nAdd option for smartSelect to ignore subwords",
-	parents: IGithubCommitParsed[];
+	commits: IGithubCommitParsed[]; // TODO add commits per day
+	commitsCount: number; // TODO count commits per day
 }
 
 export interface IGithubCommitParsed {
@@ -14,8 +11,21 @@ export interface IGithubCommitParsed {
 	author: string; // "author": {"login": "jrieken",
 	url: string; // "html_url": "https://github.com/microsoft/vscode/commit/66ee561355246bdb03909816bebe269bb6c3c278",
 	date: string; // "commit": {"date": "2023-06-20T13:04:41Z"
+	hour: number; // 0-24
+	isWorkTime: boolean; // 09:00-18:00
+	// isWorkDay: boolean; // MON-FRI
+	// weekDay: TWeekDay;
 	message: string; // "message": "Merge pull request #182571 from russelldavis/smartSelectSubwordsOption\n\nAdd option for smartSelect to ignore subwords",
+	// parents: Exclude<IGithubCommitParsed, 'parents'>[]; // TODO add parents array
 }
+
+export const workHours = {
+	start: 9,
+	end: 18
+}
+
+/** TODO add week day parser */
+export type TWeekDay = 'MON' | 'TUE' | 'WED' | 'FRI' | 'SAT' | 'SUN';
 
 export type TGithubCommitParsedHeader = keyof IGithubCommitParsed;
 

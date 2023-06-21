@@ -30,12 +30,27 @@
  * нейросхемы смотреть через freeplane, он кроссплатформенный на java
  * md смотреть любым текстовым редактором или через IDE
  * [CHANGELOG](https://t.me/stepanovv_ru_kb)
- * настройка проекта
+
+### настройка проекта
+
+* клонируем репу
 	```bash
 		git clone https://github.com/bskydive/process_modeling.git
 		cd process_modeling
 	```
- * тренировочный/ручной запуск API запросов к репе
+* ставим [node version manager](https://github.com/nvm-sh/nvm) либо nodejs вручную
+* ставим пакеты  
+	```bash
+		nvm i 20
+		npm i
+	```
+### исходные данные
+
+ * данные vscode github repo
+	* надежда на любовь M$ к github питает вероятность качественных данных
+    * [закрытые задачки, которые ушли в релиз](https://github.com/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released)
+    * [закрытые PR](https://github.com/microsoft/vscode/pulls?q=is:pr+is:merged&page=1)
+ * отладка API запросов к репе
     * ставим плагин vscode [humao.rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 	* [делаем токен тут](https://github.com/settings/tokens?type=beta)
     * запихиваем токен в vscode settings.json
@@ -64,16 +79,18 @@
 		bash ./src/scripts/download-commits.vscode.api.github.sh		# загрузить данные COMMITS
 		bash ./src/scripts/validation.vscode.api.github.sh				# проверить количество данных
 	```
- * подготовка данных из репы/архива
+ * подготовка данных без загрузки
 	```bash
 		tar -xf ./assets/vscode.github/pulls.responses.tar.gz -C ./log/
 		tar -xf ./assets/vscode.github/issues.responses.tar.gz -C ./log/
+		tar -xf ./assets/vscode.github/commits.responses.tar.gz -C ./log/
 	```
- * ставим [node version manager](https://github.com/nvm-sh/nvm) либо nodejs вручную
+
+### обработка данных
+
+ * подготавливаем данные - см. варианты выше
  * запуск парсера 
 	```bash
-		nvm i 20
-		npm i
 		npm run parse
 
 		# вывод парсера
@@ -85,20 +102,12 @@
 		# write:  ./src/graph/data/pulls-closed.vscode.json 21183
 		# write:  ./src/graph/data/commits.vscode.json 110168
 	```
- * смотрим выходные данные парсера
-	* csv файлы для excel в `./log/`
-	* json файлы для UI в `./src/graph/model/`
+ * смотрим в файлы - см. пути выше
  * запуск UI
 	```bash
 		npm run start
 	```
-
-### данные vscode github repo
-
- * надежда на любовь M$ к github питает вероятность качественных данных
- * смотрим бесплатно без смс
-    * [закрытые задачки, которые ушли в релиз](https://github.com/microsoft/vscode/issues?q=is:issue+is:closed+reason:completed+label:insiders-released)
-    * [закрытые PR](https://github.com/microsoft/vscode/pulls?q=is:pr+is:merged&page=1)
+ * открываем в браузере `http://127.0.0.1:8080`
 
 ## TODO
 
