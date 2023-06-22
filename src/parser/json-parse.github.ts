@@ -1,23 +1,23 @@
-import * as ISSUES_RAW_FILE from "./model/vscode.issues-closed.response.json";
-import * as PULLS_RAW_FILE from "./model/vscode.issues-closed.response.json";
-import * as COMMITS_RAW_FILE from "./model/vscode.commits.response.json";
+import * as ISSUES_STUB_RAW from "./model/github.issues-closed.stub.json";
+import * as PULLS_STUB_RAW from "./model/github.pulls-closed.stub.json";
+import * as COMMITS_STUB_RAW from "./model/github.commits.stub.json";
 import {
 	IGithubIssue,
 	TGithubIssueParsedHeader,
 	IGithubIssueParsed,
-} from "./model/vscode.issues-closed.response";
+} from "./model/github.issues-closed.model";
 import {
 	IGithubPull,
 	IGithubPullParsed,
 	TGithubPullParsedHeader,
-} from "./model/vscode.pulls-closed.response";
+} from "./model/github.pulls-closed.model";
 import {
 	IGithubCommit,
 	IGithubCommitDataParsed,
 	IGithubCommitParsed,
 	TGithubCommitParsedHeader,
 	workHours,
-} from "./model/vscode.commits.response";
+} from "./model/github.commits.model";
 import * as fsUtils from "./fs-utils";
 import * as mathUtils from "./math-utils";
 
@@ -172,11 +172,13 @@ function parseFiles<D>(folderPath: string, parser: (string) => D[]): D[] {
  * write:  ./log/ curl-vscode-PULLS-2023-06-07T09:17:34.772Z-PARSED.csv
  */
 export function parser(): IParsedData {
-	// JSON files typing coverage, do not remove those lines
-	// TODO use stubs in unit-tests
-	const issuesStub: IGithubIssue[] = ISSUES_RAW_FILE;
-	const pullsStub: IGithubPull[] = PULLS_RAW_FILE;
-	const commitsStub: IGithubCommit[] = COMMITS_RAW_FILE;
+	/**
+	 * JSON files typing coverage, do not remove those lines
+	 * TODO use stubs in unit-tests
+	 */
+	const issuesStub: IGithubIssue[] = ISSUES_STUB_RAW;
+	const pullsStub: IGithubPull[] = PULLS_STUB_RAW;
+	const commitsStub: IGithubCommit[] = COMMITS_STUB_RAW;
 
 	// configuration
 	const pathResponses = "./log/";

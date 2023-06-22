@@ -117,6 +117,11 @@
  * [анализ git на bash+awk](https://github.com/arzzen/git-quick-stats/tree/master)
  * [поиграться с графиками](https://chart-studio.plotly.com/create/)
 
+## лучи добра великим предкам
+
+ * https://github.com/greenrd/genmailmap/blob/master/genmailmap.sh
+ * https://github.com/dreamyguy/gitlogg/blob/master/scripts/gitlogg-generate-log.sh
+
 ## TODO
 
  * сделать парсер и визуализатор данных о процессах

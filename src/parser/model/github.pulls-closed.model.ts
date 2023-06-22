@@ -78,8 +78,8 @@ export interface IGithubPull {
 interface Automerge {
 	enabled_by: User;
 	merge_method: string;
-	commit_title?: string;
-	commit_message?: string;
+	commit_title?: string | null;
+	commit_message?: string | null;
 }
 
 interface Links {
@@ -293,14 +293,14 @@ interface Milestone {
 	node_id: string;
 	number: number;
 	title: string;
-	description?: string;
+	description?: string | null;
 	creator?: User | null;
 	open_issues: number;
 	closed_issues: number;
 	state: string;
 	created_at: string;
 	updated_at: string;
-	due_on?: string;
+	due_on?: string | null;
 	closed_at?: any;
 }
 

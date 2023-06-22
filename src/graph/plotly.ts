@@ -1,22 +1,30 @@
 import * as Plot from "plotly.js";
-import ISSUES_STUB_RAW from "./model/issues-closed.stub.json";
+import ISSUES_STUB_RAW from "../parser/model/github.issues-closed.stub.json";
 import ISSUES_RAW from "./data/issues-closed.vscode.json";
-import PULLS_STUB_RAW from "./model/pulls-closed.stub.json";
+import PULLS_STUB_RAW from "../parser/model/github.pulls-closed.stub.json";
 import PULLS_RAW from "./data/pulls-closed.vscode.json";
-import COMMITS_STUB_RAW from "./model/commits.stub.json";
+import COMMITS_STUB_RAW from "../parser/model/github.commits.stub.json";
 import COMMITS_RAW from "./data/commits.vscode.json";
 import {
 	TPlotLine,
 	IDatesNumbersPlotLine,
 	USER_VALUES_EMPTY,
-	TPlotLineData,
 	LINE_PLOT_SETTINGS,
 	LAYOUT_PLOT_SETTINGS,
 	IPlotLineTitles,
 } from "./model/plot-line.model";
-import { IGithubIssueParsed } from "../parser/model/vscode.issues-closed.response";
-import { IGithubPullParsed } from "../parser/model/vscode.pulls-closed.response";
-import { IGithubCommitParsed } from "../parser/model/vscode.commits.response";
+import {
+	IGithubIssue,
+	IGithubIssueParsed,
+} from "../parser/model/github.issues-closed.model";
+import {
+	IGithubPull,
+	IGithubPullParsed,
+} from "../parser/model/github.pulls-closed.model";
+import {
+	IGithubCommit,
+	IGithubCommitParsed,
+} from "../parser/model/github.commits.model";
 
 function parseCommitsPlotLines(data: IGithubCommitParsed[]): TPlotLine[] {
 	let plotLines: TPlotLine[] = [];
@@ -188,15 +196,20 @@ function renderPlot(
  * TODO add name(user) https://plotly.com/python/line-charts/#line-plot-modes
  */
 function main() {
-	// TODO load from file.read, not JSON import
-	// const dataParsed: IGithubIssueParsed[] = parser();
-	/** TODO use in unit test */
-	const testStub: IGithubIssueParsed[] = ISSUES_STUB_RAW;
+	/**
+	 * JSON files typing coverage, do not remove those lines
+	 * TODO use in unit test
+	 */
+	const testIssueStub: IGithubIssue[] = ISSUES_STUB_RAW;
+	const testPullStub: IGithubPull[] = PULLS_STUB_RAW;
+	const testCommitStub: IGithubCommit[] = COMMITS_STUB_RAW;
 
 	const issuesGraphRootId = "id-graph-issues-user";
 	const pullsGraphRootId = "id-graph-pulls-user";
 	const commitsGraphRootId = "id-graph-commits-user";
 
+	// TODO load from file.read, not JSON import
+	// const dataParsed: IGithubIssueParsed[] = parser();
 	/** `as unknown` because of IDE tsc JSON parse error */
 	const issuesParsed: IGithubIssueParsed[] =
 		ISSUES_RAW as unknown as IGithubIssueParsed[];

@@ -1,0 +1,218 @@
+[
+	{
+		"commit_hash": "76e9ed75e6ae69108d7dbb5e16dd0677857ed085",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 11:48:38 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:48:38-07:00",
+		"subject": "blackhole listeners for disposed emitters to avoid strange state",
+		"stats": "M src/vs/base/common/event.tsM    src/vs/platform/userData/test/browser/fileUserDataProvider.test.ts"
+	},
+	{
+		"commit_hash": "398c7e5ef63afdeb8a4625e59a27ae096400ef37",
+		"author_name_mailmap": "meganrogge",
+		"author_email_mailmap": "megan.rogge@microsoft.com",
+		"author_date": "Thu Jun 22 11:56:48 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:56:48-07:00",
+		"subject": "fix #185750",
+		"stats": "M  src/vs/workbench/contrib/terminal/browser/media/fish_xdg_data/fish/vendor_conf.d/shellIntegration.fish"
+	},
+	{
+		"commit_hash": "27ac8e0bb98de1d5ce07468f67dc6c05d0b95d08",
+		"author_name_mailmap": "Bhavya U",
+		"author_email_mailmap": "bhavyau@microsoft.com",
+		"author_date": "Thu Jun 22 03:08:49 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T03:08:49-07:00",
+		"subject": "Unify remote menu and start entry items for desktop",
+		"stats": "M  src/vs/workbench/contrib/remote/browser/remoteIndicator.tsM     src/vs/workbench/contrib/remote/browser/remoteStartEntry.tsM    src/vs/workbench/contrib/welcomeGettingStarted/common/gettingStartedContent.ts"
+	},
+	{
+		"commit_hash": "b1756f99a5fac72f221cf627f59204f7777a754b",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 11:32:51 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:32:51-07:00",
+		"subject": "fixup! error in dispose listener after emitter disposed",
+		"stats": "M  src/vs/base/common/event.tsM    src/vs/base/test/common/event.test.ts"
+	},
+	{
+		"commit_hash": "30e2bd18c6203b61466c555ee1f2e2eebb4e6ce1",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 11:22:35 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:22:35-07:00",
+		"subject": "fixup! onWillAddFirstListener/onDidRemoveLastListener get called correctly",
+		"stats": "M       src/vs/base/common/event.tsM    src/vs/base/test/common/event.test.ts"
+	},
+	{
+		"commit_hash": "670a8e53fefd7f91e6b8a0cbe3033d2b2fa46031",
+		"author_name_mailmap": "Alex Ross",
+		"author_email_mailmap": "alros@microsoft.com",
+		"author_date": "Thu Jun 22 20:19:50 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T20:19:50+02:00",
+		"subject": "Make webviewView actions always visible (#185864)",
+		"stats": "M     src/vs/workbench/contrib/webviewView/browser/webviewViewPane.ts"
+	},
+	{
+		"commit_hash": "c539335f08c7c3ba54256e5219c17c55adada1c8",
+		"author_name_mailmap": "Michael Lively",
+		"author_email_mailmap": "milively@microsoft.com",
+		"author_date": "Thu Jun 22 11:13:23 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:13:23-07:00",
+		"subject": "Add `Go To Recently Run Cell` action to nb toolbar",
+		"stats": "M    src/vs/workbench/contrib/notebook/browser/controller/editActions.tsM    src/vs/workbench/contrib/notebook/browser/controller/executeActions.tsM src/vs/workbench/contrib/notebook/browser/notebookIcons.tsM     src/vs/workbench/contrib/notebook/browser/services/notebookExecutionStateServiceImpl.tsM  src/vs/workbench/contrib/notebook/common/notebookExecutionStateService.tsM      src/vs/workbench/contrib/notebook/test/browser/testNotebookEditor.ts"
+	},
+	{
+		"commit_hash": "c89476142f5d2a07d5b15a867f71b6f6ceb63ced",
+		"author_name_mailmap": "Aaron Munger",
+		"author_email_mailmap": "aamunger@microsoft.com",
+		"author_date": "Thu Jun 22 11:06:19 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:06:19-07:00",
+		"subject": "isModified unit test",
+		"stats": "M    src/vs/workbench/contrib/files/test/browser/fileEditorInput.test.ts"
+	},
+	{
+		"commit_hash": "8bcee3b2e42d9d9c39be977f0dc05a94a0e122ce",
+		"author_name_mailmap": "Aaron Munger",
+		"author_email_mailmap": "aamunger@microsoft.com",
+		"author_date": "Thu Jun 22 11:04:27 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:04:27-07:00",
+		"subject": "remove unneeded variable",
+		"stats": "M        src/vs/workbench/services/workingCopy/electron-sandbox/workingCopyBackupTracker.ts"
+	},
+	{
+		"commit_hash": "06e56a4ef4dcc24f913306d390e4e36e9bd6a543",
+		"author_name_mailmap": "Aaron Munger",
+		"author_email_mailmap": "aamunger@microsoft.com",
+		"author_date": "Thu Jun 22 10:59:08 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T10:59:08-07:00",
+		"subject": "added saveall untitled options tests",
+		"stats": "M    src/vs/workbench/services/editor/test/browser/editorService.test.tsM    src/vs/workbench/test/browser/workbenchTestServices.ts"
+	},
+	{
+		"commit_hash": "432179af762dc31e0dc7a700643e620bba5a9ac4",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 11:08:06 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T11:08:06-07:00",
+		"subject": "a couple more tests",
+		"stats": "M    src/vs/base/test/common/event.test.ts"
+	},
+	{
+		"commit_hash": "9345328967b949788cab20a4952023b2f032ae71",
+		"author_name_mailmap": "Henning Dieterichs",
+		"author_email_mailmap": "hdieterichs@microsoft.com",
+		"author_date": "Thu Jun 22 20:01:31 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T20:01:31+02:00",
+		"subject": "Fixes CI",
+		"stats": "M       src/vs/editor/browser/widget/diffEditorWidget2/diffEditorDecorations.tsM        src/vs/editor/browser/widget/diffEditorWidget2/diffEditorWidget2.ts"
+	},
+	{
+		"commit_hash": "9bdcaf2ce096361a69e5b0ca677f9b9c07aa2327",
+		"author_name_mailmap": "Henning Dieterichs",
+		"author_email_mailmap": "hdieterichs@microsoft.com",
+		"author_date": "Tue Jun 20 16:19:04 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-20T16:19:04+02:00",
+		"subject": "Don't render revert arrows for readonly files",
+		"stats": "M  src/vs/editor/browser/widget/diffEditorWidget2/diffEditorDecorations.tsM        src/vs/editor/browser/widget/diffEditorWidget2/diffEditorWidget2.tsM    src/vs/editor/browser/widget/diffEditorWidget2/lineAlignment.ts"
+	},
+	{
+		"commit_hash": "e4e3e1420bfeec2c9cf13d1f7616e4633c61ab4d",
+		"author_name_mailmap": "Henning Dieterichs",
+		"author_email_mailmap": "hdieterichs@microsoft.com",
+		"author_date": "Thu Jun 22 19:43:34 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T19:43:34+02:00",
+		"subject": "Enables new diff editor by default (just for insiders) (#185899)",
+		"stats": "M       src/vs/editor/common/config/editorConfigurationSchema.ts"
+	},
+	{
+		"commit_hash": "8256e0d0ae921275b7ea52e9d6da1d48d30637b9",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 10:40:12 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T10:40:12-07:00",
+		"subject": "fix: use the right scheme for new managed remote resources (#185897)",
+		"stats": "M     src/vs/code/electron-main/app.tsM       src/vs/platform/remote/electron-sandbox/electronRemoteResourceLoader.ts"
+	},
+	{
+		"commit_hash": "25f01f57916de3eb600225b13c6d7043f45a9e68",
+		"author_name_mailmap": "Henning Dieterichs",
+		"author_email_mailmap": "hdieterichs@microsoft.com",
+		"author_date": "Thu Jun 22 19:30:59 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T19:30:59+02:00",
+		"subject": "Removes diffEditorWidget2 trusted type, uses diffEditorWidget TT instead. (#185895)",
+		"stats": "M    src/vs/code/electron-sandbox/workbench/workbench-dev.htmlM      src/vs/code/electron-sandbox/workbench/workbench.htmlM  src/vs/editor/browser/widget/diffEditorWidget.tsM       src/vs/editor/browser/widget/diffEditorWidget2/renderLines.ts"
+	},
+	{
+		"commit_hash": "b898fe10389217c74abcb919756df0a0f261f9c9",
+		"author_name_mailmap": "Daniel Imms",
+		"author_email_mailmap": "2193314+Tyriar@users.noreply.github.com",
+		"author_date": "Thu Jun 22 10:16:55 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T10:16:55-07:00",
+		"subject": "Initial working multi-line terminal links",
+		"stats": "M       src/vs/workbench/contrib/terminalContrib/links/browser/links.tsM        src/vs/workbench/contrib/terminalContrib/links/browser/terminalLinkDetectorAdapter.tsM  src/vs/workbench/contrib/terminalContrib/links/browser/terminalLinkManager.tsM    src/vs/workbench/contrib/terminalContrib/links/browser/terminalLinkOpeners.tsM  src/vs/workbench/contrib/terminalContrib/links/browser/terminalLocalLinkDetector.tsA    src/vs/workbench/contrib/terminalContrib/links/browser/terminalMultiLineLinkDetector.ts"
+	},
+	{
+		"commit_hash": "a6ccf1569d5740daba6434c931c6e1b865bff762",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 09:46:19 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T09:46:19-07:00",
+		"subject": "fix nit",
+		"stats": "M        src/vs/base/common/event.ts"
+	},
+	{
+		"commit_hash": "37fa3175df8af299645780a77343b9e1c4ebf327",
+		"author_name_mailmap": "Johannes",
+		"author_email_mailmap": "johannes.rieken@gmail.com",
+		"author_date": "Thu Jun 22 18:26:50 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T18:26:50+02:00",
+		"subject": "make it run again (mostly)",
+		"stats": "M       migrate.jsM     src/vs/base/node/unc.jsM        src/vs/code/electron-sandbox/workbench/workbench-esm.htmlM      src/vs/workbench/contrib/terminal/browser/xterm/xtermTerminal.tsM       test/unit/electron/renderer-esm.html"
+	},
+	{
+		"commit_hash": "76bf4ec2b1ac44d78a27a85a2998f22599d9e93b",
+		"author_name_mailmap": "Connor Peet",
+		"author_email_mailmap": "connor@peet.io",
+		"author_date": "Thu Jun 22 09:03:08 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T09:03:08-07:00",
+		"subject": "events: improve emitter performance",
+		"stats": "M      src/vs/base/common/event.tsM    src/vs/base/test/common/event.test.tsM  src/vs/editor/browser/widget/codeEditorWidget.ts"
+	},
+	{
+		"commit_hash": "b44aededb8ebe46d499e4a0a84eb5cfa00a07021",
+		"author_name_mailmap": "Daniel Imms",
+		"author_email_mailmap": "2193314+Tyriar@users.noreply.github.com",
+		"author_date": "Thu Jun 22 08:56:12 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T08:56:12-07:00",
+		"subject": "Support links with end rows and/or cols",
+		"stats": "M src/vs/workbench/contrib/terminalContrib/links/browser/terminalLinkOpeners.ts"
+	},
+	{
+		"commit_hash": "9d817ebba46c3ad197bd811bd13c055bb3550b6a",
+		"author_name_mailmap": "Daniel Imms",
+		"author_email_mailmap": "2193314+Tyriar@users.noreply.github.com",
+		"author_date": "Thu Jun 22 08:52:59 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T08:52:59-07:00",
+		"subject": "Add test for new lines+chars format",
+		"stats": "M     src/vs/workbench/contrib/terminalContrib/links/test/browser/terminalLinkParsing.test.ts"
+	},
+	{
+		"commit_hash": "158ae0a53bff99677756db5262048b8e6fc3152e",
+		"author_name_mailmap": "Daniel Imms",
+		"author_email_mailmap": "2193314+Tyriar@users.noreply.github.com",
+		"author_date": "Thu Jun 22 08:50:59 2023 -0700",
+		"author_date_iso_8601_strict": "2023-06-22T08:50:59-07:00",
+		"subject": "Support parsing link end row and col",
+		"stats": "M    src/vs/workbench/contrib/terminalContrib/links/browser/terminalLinkParsing.tsM  src/vs/workbench/contrib/terminalContrib/links/test/browser/terminalLinkParsing.test.ts"
+	},
+	{
+		"commit_hash": "25e5a2adf5093a4cb119877762b28786f69c83a2",
+		"author_name_mailmap": "Benjamin Pasero",
+		"author_email_mailmap": "benjamin.pasero@microsoft.com",
+		"author_date": "Thu Jun 22 16:50:18 2023 +0200",
+		"author_date_iso_8601_strict": "2023-06-22T16:50:18+02:00",
+		"subject": "storage - `storeAll` and `external` (#185837)",
+		"stats": ""
+	}
+]
