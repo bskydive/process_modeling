@@ -1,0 +1,458 @@
+[
+	{
+		"commit": "feec65b5421a5c4e2fbe98730134370f23fc1151",
+		"abbreviated_commit": "feec65b5421",
+		"tree": "32e92c0986a0c9e8615b1827cbb1963d8819faf8",
+		"abbreviated_tree": "32e92c0986a",
+		"parent": "fcfef87f081b88f0dc3798ab0289745cf4894669",
+		"abbreviated_parent": "fcfef87f081",
+		"refs": "",
+		"encoding": "",
+		"subject": "Also pass process.env",
+		"sanitized_subject_line": "Also-pass-process.env",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Jean Pierre",
+			"email": "jeanp413@hotmail.com",
+			"date": "Fri, 26 May 2023 19:04:31 -0500"
+		},
+		"commiter": {
+			"name": "Jean Pierre",
+			"email": "jeanp413@hotmail.com",
+			"date": "Fri, 26 May 2023 19:04:31 -0500"
+		}
+	},
+	{
+		"commit": "dbead1883257d6bca3e4b8dfb31c67b06c8560cd",
+		"abbreviated_commit": "dbead188325",
+		"tree": "283ca82b2b247f7a3f12ac4fe08d6dad35ae2bcb",
+		"abbreviated_tree": "283ca82b2b2",
+		"parent": "28e1298f31544ac403a96caf3dc36289fd69d26b",
+		"abbreviated_parent": "28e1298f315",
+		"refs": "",
+		"encoding": "",
+		"subject": "Add F10 keybinding for debugger step, even on Web. (#183510)",
+		"sanitized_subject_line": "Add-F10-keybinding-for-debugger-step-even-on-Web.-183510",
+		"body": "Fixes #181792.\r\nPreviously, for Web the keyboard shortcut was Alt-F10, because it was\r\nbelieved that F10 could not be bound on browsers. This turned out to be\r\nincorrect, so we make the shortcut consistent (F10) with desktop VSCode\r\nwhich is also what many other debuggers use.\r\nWe keep Alt-F10 on web as a secondary keybinding to keep the experience\r\nsome web users may have gotten used to by now.",
+		"commit_notes": "",
+		"author": {
+			"name": "Ole",
+			"email": "oler@google.com",
+			"date": "Sat, 27 May 2023 02:03:25 +0200"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Sat, 27 May 2023 00:03:25 +0000"
+		}
+	},
+	{
+		"commit": "28e1298f31544ac403a96caf3dc36289fd69d26b",
+		"abbreviated_commit": "28e1298f315",
+		"tree": "60e0fe8d218a94f4ef452d9e37700dc6e232cb77",
+		"abbreviated_tree": "60e0fe8d218",
+		"parent": "5dd48a7677b7cf466ca3ab1ef44b5930b53b9d18",
+		"abbreviated_parent": "5dd48a7677b",
+		"refs": "",
+		"encoding": "",
+		"subject": "Schedule welcome widget to show once between typing. (#183606)",
+		"sanitized_subject_line": "Schedule-welcome-widget-to-show-once-between-typing.-183606",
+		"body": "* Schedule dialog to show once between typing\r\n\r\n* Don't re-render if already displayed once",
+		"commit_notes": "",
+		"author": {
+			"name": "Bhavya U",
+			"email": "bhavyau@microsoft.com",
+			"date": "Fri, 26 May 2023 16:27:52 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Sat, 27 May 2023 01:27:52 +0200"
+		}
+	},
+	{
+		"commit": "c52a87e8a6afb8b3287d99a402045df4f9085fd4",
+		"abbreviated_commit": "c52a87e8a6a",
+		"tree": "01a51d24d909265237680a82fb713e158ec43d99",
+		"abbreviated_tree": "01a51d24d90",
+		"parent": "9473a2928e4a8edebbcd7a67505cd49a4aed04f0",
+		"abbreviated_parent": "9473a2928e4",
+		"refs": "",
+		"encoding": "",
+		"subject": "use scroll setting variable correctly",
+		"sanitized_subject_line": "use-scroll-setting-variable-correctly",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "aamunger",
+			"email": "aamunger@microsoft.com",
+			"date": "Fri, 26 May 2023 15:21:45 -0700"
+		},
+		"commiter": {
+			"name": "aamunger",
+			"email": "aamunger@microsoft.com",
+			"date": "Fri, 26 May 2023 15:21:45 -0700"
+		}
+	},
+	{
+		"commit": "7fcfb2ff8178d99b0cacfb31d645f3509be16f2e",
+		"abbreviated_commit": "7fcfb2ff817",
+		"tree": "ba3e0bf801890826b890ed9c7a227e4f790012a8",
+		"abbreviated_tree": "ba3e0bf8018",
+		"parent": "648c3c831df728831476b6c427546f416844155b",
+		"abbreviated_parent": "648c3c831df",
+		"refs": "",
+		"encoding": "",
+		"subject": "Use active editor and show progress when sharing (#183603)",
+		"sanitized_subject_line": "Use-active-editor-and-show-progress-when-sharing-183603",
+		"body": "Use active editor and show progress",
+		"commit_notes": "",
+		"author": {
+			"name": "Joyce Er",
+			"email": "joyce.er@microsoft.com",
+			"date": "Fri, 26 May 2023 15:12:03 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 15:12:03 -0700"
+		}
+	},
+	{
+		"commit": "1ce7ada996a0c969f6354207ecf1fbb6fca0607e",
+		"abbreviated_commit": "1ce7ada996a",
+		"tree": "2c5869ea1fd422dae6bc6b0e0ba462c94c81468a",
+		"abbreviated_tree": "2c5869ea1fd",
+		"parent": "77e463cdb82c855b184388a191db51844e00b151",
+		"abbreviated_parent": "77e463cdb82",
+		"refs": "",
+		"encoding": "",
+		"subject": "fix ? operator",
+		"sanitized_subject_line": "fix-operator",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "rebornix",
+			"email": "penn.lv@gmail.com",
+			"date": "Fri, 26 May 2023 14:57:24 -0700"
+		},
+		"commiter": {
+			"name": "rebornix",
+			"email": "penn.lv@gmail.com",
+			"date": "Fri, 26 May 2023 14:57:24 -0700"
+		}
+	},
+	{
+		"commit": "648c3c831df728831476b6c427546f416844155b",
+		"abbreviated_commit": "648c3c831df",
+		"tree": "e821c7243a99e2a244872954d4f9f2ffe58737ae",
+		"abbreviated_tree": "e821c7243a9",
+		"parent": "86e3fd8dedd46893a6db9c2dc7ea9e6d3a99e097",
+		"abbreviated_parent": "86e3fd8dedd",
+		"refs": "",
+		"encoding": "",
+		"subject": "Tweak proposed API JSDoc (#183590)",
+		"sanitized_subject_line": "Tweak-proposed-API-JSDoc-183590",
+		"body": "* Tweak proposed API JSDoc\r\n\r\n* workbench -> workspace",
+		"commit_notes": "",
+		"author": {
+			"name": "Joyce Er",
+			"email": "joyce.er@microsoft.com",
+			"date": "Fri, 26 May 2023 14:32:37 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 14:32:37 -0700"
+		}
+	},
+	{
+		"commit": "86e3fd8dedd46893a6db9c2dc7ea9e6d3a99e097",
+		"abbreviated_commit": "86e3fd8dedd",
+		"tree": "1d24dd8c35b628ff71b4ea566f516c12a24b23bb",
+		"abbreviated_tree": "1d24dd8c35b",
+		"parent": "397175e067bc7e80cd41af45da5fcd6f322e51f2",
+		"abbreviated_parent": "397175e067b",
+		"refs": "",
+		"encoding": "",
+		"subject": "Fixing Jupyter notebook issue 13263 (#183527)",
+		"sanitized_subject_line": "Fixing-Jupyter-notebook-issue-13263-183527",
+		"body": "fix for the issue, still need to understand why there is strange focusing",
+		"commit_notes": "",
+		"author": {
+			"name": "Aiday Marlen Kyzy",
+			"email": "amarlenkyzy@microsoft.com",
+			"date": "Fri, 26 May 2023 23:32:20 +0200"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 14:32:20 -0700"
+		}
+	},
+	{
+		"commit": "397175e067bc7e80cd41af45da5fcd6f322e51f2",
+		"abbreviated_commit": "397175e067b",
+		"tree": "499a03f4fd5f6ec19c4d3d0b0650cdaa410fce55",
+		"abbreviated_tree": "499a03f4fd5",
+		"parent": "354fb8fafa8ca1ff06a97a3b1c029b2bedd59692",
+		"abbreviated_parent": "354fb8fafa8",
+		"refs": "",
+		"encoding": "",
+		"subject": "minimum scrolling to reveal the next cell on shift+enter (#183600)",
+		"sanitized_subject_line": "minimum-scrolling-to-reveal-the-next-cell-on-shift-enter-183600",
+		"body": "do minimum scrolling to reveal the next cell on Execute cell and select next",
+		"commit_notes": "",
+		"author": {
+			"name": "Aaron Munger",
+			"email": "aamunger@microsoft.com",
+			"date": "Fri, 26 May 2023 14:30:46 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 14:30:46 -0700"
+		}
+	},
+	{
+		"commit": "354fb8fafa8ca1ff06a97a3b1c029b2bedd59692",
+		"abbreviated_commit": "354fb8fafa8",
+		"tree": "3f9a9e7477fa755d57c99a7e79b460c02879a80d",
+		"abbreviated_tree": "3f9a9e7477f",
+		"parent": "257e0b1eac8d60d2489b5d5b9dfc8d6d284ebe06",
+		"abbreviated_parent": "257e0b1eac8",
+		"refs": "",
+		"encoding": "",
+		"subject": "Fix exporting chat model to JSON before it is initialized (#183597)",
+		"sanitized_subject_line": "Fix-exporting-chat-model-to-JSON-before-it-is-initialized-183597",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Rob Lourens",
+			"email": "roblourens@gmail.com",
+			"date": "Fri, 26 May 2023 14:03:34 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 23:03:34 +0200"
+		}
+	},
+	{
+		"commit": "257e0b1eac8d60d2489b5d5b9dfc8d6d284ebe06",
+		"abbreviated_commit": "257e0b1eac8",
+		"tree": "9401ae71a471a13b30a3306ea68ce02fba6bcd38",
+		"abbreviated_tree": "9401ae71a47",
+		"parent": "a72e45d06940512a2490317803bb9684e69f6c2e",
+		"abbreviated_parent": "a72e45d0694",
+		"refs": "",
+		"encoding": "",
+		"subject": "Add experimental setting to enable this dialog",
+		"sanitized_subject_line": "Add-experimental-setting-to-enable-this-dialog",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Bhavya U",
+			"email": "bhavyau@microsoft.com",
+			"date": "Fri, 26 May 2023 13:44:16 -0700"
+		},
+		"commiter": {
+			"name": "Bhavya U",
+			"email": "bhavyau@microsoft.com",
+			"date": "Fri, 26 May 2023 14:01:03 -0700"
+		}
+	},
+	{
+		"commit": "a72e45d06940512a2490317803bb9684e69f6c2e",
+		"abbreviated_commit": "a72e45d0694",
+		"tree": "60bc4f6ca2bf5688e8722ca4e86871a11bc0825b",
+		"abbreviated_tree": "60bc4f6ca2b",
+		"parent": "69278e5326279431c65d8f963245b7c3731d3e35",
+		"abbreviated_parent": "69278e53262",
+		"refs": "",
+		"encoding": "",
+		"subject": "[json/css/html] update services (#183595)",
+		"sanitized_subject_line": "json-css-html-update-services-183595",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Martin Aeschlimann",
+			"email": "martinae@microsoft.com",
+			"date": "Fri, 26 May 2023 22:54:38 +0200"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 22:54:38 +0200"
+		}
+	},
+	{
+		"commit": "69278e5326279431c65d8f963245b7c3731d3e35",
+		"abbreviated_commit": "69278e53262",
+		"tree": "f2a58a60e6f4479744e92779793e87f801bd07b5",
+		"abbreviated_tree": "f2a58a60e6f",
+		"parent": "7acf02a451f6b136f9b60b105506bc5130e401a3",
+		"abbreviated_parent": "7acf02a451f",
+		"refs": "",
+		"encoding": "",
+		"subject": "cli: improve output for code tunnel status (#183571)",
+		"sanitized_subject_line": "cli-improve-output-for-code-tunnel-status-183571",
+		"body": "* testing: allow invalidateTestResults to take an array\r\n\r\n* cli: improve output for code tunnel status\r\n\r\nFixes #183570",
+		"commit_notes": "",
+		"author": {
+			"name": "Connor Peet",
+			"email": "connor@peet.io",
+			"date": "Fri, 26 May 2023 13:36:04 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 13:36:04 -0700"
+		}
+	},
+	{
+		"commit": "7acf02a451f6b136f9b60b105506bc5130e401a3",
+		"abbreviated_commit": "7acf02a451f",
+		"tree": "78b130f6e93b0846a4071513316932d71b80f4b8",
+		"abbreviated_tree": "78b130f6e93",
+		"parent": "b52b8289cf98f123d3c5e07d0525012bc553cf1b",
+		"abbreviated_parent": "b52b8289cf9",
+		"refs": "",
+		"encoding": "",
+		"subject": "Change text (#183589)",
+		"sanitized_subject_line": "Change-text-183589",
+		"body": "* Change text\n\n* Accidentally changed the wrong file",
+		"commit_notes": "",
+		"author": {
+			"name": "Raymond Zhao",
+			"email": "7199958+rzhao271@users.noreply.github.com",
+			"date": "Fri, 26 May 2023 13:22:11 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 13:22:11 -0700"
+		}
+	},
+	{
+		"commit": "5db1fb2af0d25ddbdaad83b8beefa3e3cb4dd22c",
+		"abbreviated_commit": "5db1fb2af0d",
+		"tree": "9851d683cff6222377859b08d2e0448bc0af67ae",
+		"abbreviated_tree": "9851d683cff",
+		"parent": "230a6266ebc8e092521a949ed159d8be23e1b1b2",
+		"abbreviated_parent": "230a6266ebc",
+		"refs": "",
+		"encoding": "",
+		"subject": "rm message abt macOS",
+		"sanitized_subject_line": "rm-message-abt-macOS",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "meganrogge",
+			"email": "megan.rogge@microsoft.com",
+			"date": "Fri, 26 May 2023 14:59:40 -0500"
+		},
+		"commiter": {
+			"name": "meganrogge",
+			"email": "megan.rogge@microsoft.com",
+			"date": "Fri, 26 May 2023 14:59:40 -0500"
+		}
+	},
+	{
+		"commit": "53a53f8bb97ffce8cc7e840f8ed695b5cfb68a3f",
+		"abbreviated_commit": "53a53f8bb97",
+		"tree": "17aa99568fe77635512be1147745aa64f1d19b5f",
+		"abbreviated_tree": "17aa99568fe",
+		"parent": "6aa8eb51c6dd3122dbfb5bf56a3e4229ce974996",
+		"abbreviated_parent": "6aa8eb51c6d",
+		"refs": "",
+		"encoding": "",
+		"subject": "Remove toggle setting more eagerly (#183584)",
+		"sanitized_subject_line": "Remove-toggle-setting-more-eagerly-183584",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Raymond Zhao",
+			"email": "7199958+rzhao271@users.noreply.github.com",
+			"date": "Fri, 26 May 2023 12:54:04 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 12:54:04 -0700"
+		}
+	},
+	{
+		"commit": "6aa8eb51c6dd3122dbfb5bf56a3e4229ce974996",
+		"abbreviated_commit": "6aa8eb51c6d",
+		"tree": "f66252dd08280d953ff597aa4808be31e0104c63",
+		"abbreviated_tree": "f66252dd082",
+		"parent": "e7a17105bdea3054c96d4f7363249c8686ae0951",
+		"abbreviated_parent": "e7a17105bde",
+		"refs": "",
+		"encoding": "",
+		"subject": "Add support for rendering svg and md in welcome message (#183580)",
+		"sanitized_subject_line": "Add-support-for-rendering-svg-and-md-in-welcome-message-183580",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Bhavya U",
+			"email": "bhavyau@microsoft.com",
+			"date": "Fri, 26 May 2023 12:08:29 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 12:08:29 -0700"
+		}
+	},
+	{
+		"commit": "e7a17105bdea3054c96d4f7363249c8686ae0951",
+		"abbreviated_commit": "e7a17105bde",
+		"tree": "ff981179f912bc023246ce97c8bd34adf092e3bd",
+		"abbreviated_tree": "ff981179f91",
+		"parent": "043046448a73f1a8d96a33c450623e0b71ab2d1a",
+		"abbreviated_parent": "043046448a7",
+		"refs": "",
+		"encoding": "",
+		"subject": "Document `ShareProvider` API proposal (#183568)",
+		"sanitized_subject_line": "Document-ShareProvider-API-proposal-183568",
+		"body": "* Document `ShareProvider` API proposal\n\n* Remove mention of VS Code from JSDoc",
+		"commit_notes": "",
+		"author": {
+			"name": "Joyce Er",
+			"email": "joyce.er@microsoft.com",
+			"date": "Fri, 26 May 2023 11:53:55 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 20:53:55 +0200"
+		}
+	},
+	{
+		"commit": "d15a0aa70cfc76e41acdf137709642418880ad23",
+		"abbreviated_commit": "d15a0aa70cf",
+		"tree": "d4e83e873337ccd758a77a54dfc95095547f5ff9",
+		"abbreviated_tree": "d4e83e87333",
+		"parent": "1942c0ecccd8b6103f9c8b89296f10bec34e3050",
+		"abbreviated_parent": "1942c0ecccd",
+		"refs": "",
+		"encoding": "",
+		"subject": "testing: allow invalidateTestResults to take an array (#183569)",
+		"sanitized_subject_line": "testing-allow-invalidateTestResults-to-take-an-array-183569",
+		"body": "",
+		"commit_notes": "",
+		"author": {
+			"name": "Connor Peet",
+			"email": "connor@peet.io",
+			"date": "Fri, 26 May 2023 11:07:50 -0700"
+		},
+		"commiter": {
+			"name": "GitHub",
+			"email": "noreply@github.com",
+			"date": "Fri, 26 May 2023 11:07:50 -0700"
+		}
+	}
+]

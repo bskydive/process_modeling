@@ -112,6 +112,10 @@
  * ![](./doc/картинки/pulls-hours.jpg)
  * ![](./doc/картинки/commits-hour.jpg)
 
+## дополнительные инструменты
+
+ * [анализ git на bash+awk](https://github.com/arzzen/git-quick-stats/tree/master)
+ * [поиграться с графиками](https://chart-studio.plotly.com/create/)
 
 ## TODO
 
