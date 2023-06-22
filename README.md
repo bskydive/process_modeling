@@ -120,6 +120,8 @@
 	* проверить развёртывание с нуля
 	* запилить кучу графиков
 	* JSON.parse: remove unusual line terminators
+	* фильтрация данных
+	* [красота](https://www.npmjs.com/package/angular-plotly.js)
  * сделать движок моделирования
 	* модель модели данных
 	* конфигуратор алгоритма модели
@@ -137,7 +139,9 @@
 	* JIRA
 	* gitlab
 	* bitbucket
-	* https://www.npmjs.com/package/angular-plotly.js
+	* git
+	* bash
+	* eslint
 
 ## Как связаться с автором?
 

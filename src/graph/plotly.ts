@@ -61,7 +61,7 @@ function parseCommitsPlotLines(data: IGithubCommitParsed[]): TPlotLine[] {
 	return plotLines;
 }
 
-/** TODO for pulls use also issue.assignees[0] */ 
+/** TODO for pulls use also issue.assignees[0] */
 function parsePullsPlotLines(data: IGithubPullParsed[]): TPlotLine[] {
 	let plotLines: TPlotLine[] = [];
 	/** add issues without assignee or user */
@@ -162,7 +162,7 @@ function renderPlot(
 		xaxis: { title: titles.xTitle },
 		yaxis: { title: titles.yTitle },
 		title: { text: titles.plotTitle },
-		// TODO add legend title
+		legend: { title: { text: titles.legendTitle } },
 	};
 	let config: Partial<Plot.Config> = {
 		// displaylogo: false,
