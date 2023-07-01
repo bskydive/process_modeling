@@ -3,6 +3,7 @@
 tokens/
 log/
 dist/
+utils/
 
 ## git
 .git
