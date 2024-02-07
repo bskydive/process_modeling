@@ -10,13 +10,13 @@
 
 ## Что тут есть?
 
- * [тут](./utils/freeplane/freeplane.sh) портативный рисователь нейросхем [freeplane](https://www.freeplane.org/), потомок почившего freemind, версия 1.11.1
+ * [тут](./utils/) портативный рисователь нейросхем [freeplane](https://www.freeplane.org/), потомок почившего freemind, версия 1.11.1
  	* рисователь мнемосхем пропатчен, увеличена память для экспорта картинок `JAVA_OPTS="-Xmx1000g $JAVA_OPTS"`
- * [тут](./assets/github.api.http) скрипты для плагина vscode [humao.rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+ * [тут](./assets/vscode.github/github.api.http) скрипты для плагина vscode [humao.rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
  * [тут](./doc/README.md) подробная документация и аналитика
  * [тут](./tokens/) bash скрипты с ENV VARIABLES и токенами для cloud api
- * [тут](./doc/assets/) нейросхемы, сырые данные(архивы, csv, таблицы excel)
- * [тут](./src/json-parse.github.ts) исходники парсера
+ * [тут](./doc/нейросхемы/) нейросхемы, сырые данные(архивы, csv, таблицы excel)
+ * [тут](./src/parser/json-parse.github.ts) исходники парсера
  * [тут](./log) промежуточные данные: JSON, CSV файлы парсера и скриптов загрузки из cloud API
  * [тут](./log/csv) выходные данные CSV парсера
  * [тут](./src/graph/data/) выходные JSON данные парсера для web UI
@@ -67,7 +67,7 @@
             #!/bin/bash
             export gh_api_token="SOMETOKEN"
         ```
-	* запускаем [API запросы](./assets/github.api.http) вручную, смотрим ответ и заголовки ответа
+	* запускаем [API запросы](./assets/vscode.github/github.api.http) вручную, смотрим ответ и заголовки ответа
  * загрузка данных с нуля
 	* [сделать токен](https://docs.github.com/ru/rest/guides/getting-started-with-the-rest-api) для REST API github
 	* вписать токен в [скрипт](./tokens/.gh-api-token.sh.empty)
